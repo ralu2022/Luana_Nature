@@ -12,8 +12,38 @@ public class PageController {
         return "index";
     }
 
+    @GetMapping("/companii")
+    public String companii() {
+        return "companies";
+    }
+
+    @GetMapping("/individual")
+    public String individual() {
+        return "individuals";
+    }
+
+    @GetMapping("/kids")
+    public String kids() {
+        return "kidsarea";
+    }
+
+    @GetMapping("/store")
+    public String store() {
+        return "store";
+    }
+
     @GetMapping("/reservation")
     public String rezervare() {
         return "reservation";
+    }
+
+    @GetMapping("/aboutus")
+    public String aboutus() {
+        return "aboutus";
+    }
+
+    @GetMapping("/contact")
+    public String contact() {
+        return "contact";
     }
 }

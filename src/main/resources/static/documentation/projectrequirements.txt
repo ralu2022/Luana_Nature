@@ -1,0 +1,24 @@
+/*
+
+1. Introducere - 1 -1.5 pagini
+2. Tehnologii utilizate - notiuni teoretice
+    - Java
+    - SpringBoot
+    - Bootstrap
+    - HTML
+    - CSS
+
+3. Prezentare aplicatie
+    - prezentare scenariu
+    - structura
+    - UML
+    - prezentare tabele BD
+    - ghidul aplicatiei
+
+4. Concluzii si perspective de dezvoltare
+
+Bibliografie de utilizat in text
+
+Prezentare 15 ppt
+
+*/
