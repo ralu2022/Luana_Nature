@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
     <title>Rezervare generală</title>
 </head>
 
-<body style="background-image:url('/pictures/fundata_1.jpeg');">
+<body style="background-image:url('/pictures/fundata_0.jpg');">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <br>
@@ -21,7 +21,7 @@
         <div class="collapse navbar-collapse" id="navbarNavleft">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html"><b>Acasă</b></a>
+                    <a class="nav-link" th:href="@{/index}"><b>Acasă</b></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="companies.html"><b>Companii</b></a>
@@ -46,21 +46,24 @@
                     <a class="nav-link" href="register.html"><b>Înregistrați-vă</b></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="aboutus.html">Despre noi</a>
+                    <a class="nav-link" href="aboutus.html"><b>Despre noi</b></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
+                    <a class="nav-link" href="contact.html"><b>Contact</b></a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 <br><br><br>
+<p style="font-size: 45px; font-family: Elephant; text-align: center;"> Luana Nature
+<p/><br>
 
 <div class="container"
      style="background: darksalmon; padding:30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      max-width: 600px; width: 100%; max-height: 820px; margin-top: 20px; margin-bottom: 200px;overflow-y:auto">
-    <h2 style="margin-bottom: 20px; color: #343a40; text-align: center;">Rezervare generală</h2>
+      max-width: 600px; width: 100%; max-height: 820px; margin-top: 20px; margin-bottom: 40px;overflow-y:auto;
+font-family:'Lucida Console'; ">
+    <h2 style="margin-bottom: 20px; color: #343a40; text-align: center;font-family:Algerian">Rezervare generala</h2>
     <form>
         <div class="form-group">
             <label for="name">Nume*:</label>
@@ -78,21 +81,65 @@
                    style="border-radius: 5px;">
         </div>
         <div class="form-group">
-            <label for="checkin">Check-in Date:</label>
-            <input type="date" class="form-control" id="checkin" required style="border-radius: 5px;">
-        </div>
-        <div class="form-group">
-            <label for="checkout">Check-out Date:</label>
-            <input type="date" class="form-control" id="checkout" required style="border-radius: 5px;">
-        </div>
-        <div class="form-group">
-            <label for="guests">Number of Guests:</label>
-            <input type="number" class="form-control" id="guests" placeholder="Enter number of guests" required
+            <label for="companie">Companie (dacă este cazul):</label>
+            <input type="tel" class="form-control" id="companie" placeholder="Companie" required
                    style="border-radius: 5px;">
         </div>
         <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea class="form-control" id="message" rows="4" placeholder="Additional requests or questions"
+            <label for="datasosire">Data sosirii*:</label>
+            <input type="date" class="form-control" id="datasosire" required style="border-radius: 5px;">
+        </div> <!-- setari data sistem -->
+        <div class="form-group">
+            <label for="dataplecare">Data plecării*:</label>
+            <input type="date" class="form-control" id="dataplecare" required style="border-radius: 5px;">
+        </div>
+        <div class="form-group">
+            <label for="persoane">Număr de persoane*:</label>
+            <input type="numar" class="form-control" id="persoane" placeholder="Introduceți numărul de persoane"
+                   required style="border-radius: 5px;">
+        </div>
+        <div class="form-group mb-3">
+            <label for="listacazare">Opțiune de cazare*:</label>
+            <select class="form-control" id="listacazare" name="options"
+                    required style="border-radius: 5px;" place-holder=Alegeți o opțiune>
+                <option value="1">A-Frame</option>
+                <option value="2">Gampling</option>
+                <option value="3">Căsuțe de lemn</option>
+            </select>
+        </div>
+        <div class="form-group mb-3">
+            <label for="catering">Catering*:</label>
+            <select class="form-control" id="catering" name="options"
+                    required style="border-radius: 5px;" place-holder=Alegeți o opțiune>
+                <option value="1">Self-catering</option>
+                <option value="2">Mic dejun</option>
+                <option value="3">Demipensiune</option>
+                <option value="4">All-inclusive</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="mentiunimancare">Mențiuni speciale mâncare:</label>
+            <textarea class="form-control" id="mentiunimancare" rows="4"
+                      placeholder="Mențiuni speciale mâncare (vegan,intoleranțe)"
+                      style="border-radius: 5px;"></textarea>
+        </div>
+        <p>Doriți adăugarea ratei fixe de băuturi/răcoritoare (100 ron/zi)</p>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="bautura1" name="optradio" value="bautura1" checked>Da
+            <label class="form-check-label" for="bautura1"></label>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="bautura2" name="optradio" value="bautura2">Nu
+            <label class="form-check-label" for="bautura2"></label>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="bautura3" name="optradio" value="bautura3">Nu știu încă
+            <label class="form-check-label"></label>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="mesaj">Mesaj:</label>
+            <textarea class="form-control" id="mesaj" rows="4" placeholder="Alte întrebări și cereri"
                       style="border-radius: 5px;"></textarea>
         </div>
         <button type="submit" class="btn btn-info"
@@ -101,7 +148,7 @@
     </form>
 </div>
 
-<br><br><br>
+<br>
 
 <footer class="text-center text-lg-start bg-body-tertiary text-muted" style="background-color: lightgrey">
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
