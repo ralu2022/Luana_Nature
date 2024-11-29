@@ -4885,3 +4885,42 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2024-11-29T18:13:35.120+02:00  INFO 9052 --- [Luana_Nature] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-11-29T18:13:35.138+02:00  INFO 9052 --- [Luana_Nature] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-11-29T18:13:35.141+02:00  INFO 9052 --- [Luana_Nature] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-29T18:13:37.162+02:00  INFO 24916 --- [Luana_Nature] [main] c.e.Luana_Nature.LuanaNatureApplication  : Starting LuanaNatureApplication using Java 22.0.2 with PID 24916 (D:\Java\Diploma\19.10.2024\Luana_Nature\Luana_Nature\target\classes started by jacob in D:\Java\Diploma\19.10.2024\Luana_Nature\Luana_Nature)
+2024-11-29T18:13:37.162+02:00  INFO 24916 --- [Luana_Nature] [main] c.e.Luana_Nature.LuanaNatureApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-11-29T18:13:37.608+02:00  INFO 24916 --- [Luana_Nature] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-29T18:13:37.655+02:00  INFO 24916 --- [Luana_Nature] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 4 JPA repository interfaces.
+2024-11-29T18:13:38.017+02:00  INFO 24916 --- [Luana_Nature] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-11-29T18:13:38.027+02:00  INFO 24916 --- [Luana_Nature] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-29T18:13:38.027+02:00  INFO 24916 --- [Luana_Nature] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-29T18:13:38.075+02:00  INFO 24916 --- [Luana_Nature] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-29T18:13:38.075+02:00  INFO 24916 --- [Luana_Nature] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 883 ms
+2024-11-29T18:13:38.178+02:00  INFO 24916 --- [Luana_Nature] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-29T18:13:38.215+02:00  INFO 24916 --- [Luana_Nature] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-29T18:13:38.237+02:00  INFO 24916 --- [Luana_Nature] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-29T18:13:38.459+02:00  INFO 24916 --- [Luana_Nature] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-29T18:13:38.479+02:00  INFO 24916 --- [Luana_Nature] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-29T18:13:38.620+02:00  INFO 24916 --- [Luana_Nature] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7f305f34
+2024-11-29T18:13:38.622+02:00  INFO 24916 --- [Luana_Nature] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-29T18:13:39.311+02:00  INFO 24916 --- [Luana_Nature] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-29T18:13:39.378+02:00  INFO 24916 --- [Luana_Nature] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29T18:13:39.663+02:00  WARN 24916 --- [Luana_Nature] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-29T18:13:39.677+02:00  INFO 24916 --- [Luana_Nature] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name myUserDetailsService
+2024-11-29T18:13:39.723+02:00  INFO 24916 --- [Luana_Nature] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-11-29T18:13:39.850+02:00 DEBUG 24916 --- [Luana_Nature] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, UsernamePasswordAuthenticationFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-11-29T18:13:40.022+02:00  INFO 24916 --- [Luana_Nature] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-11-29T18:13:40.028+02:00  INFO 24916 --- [Luana_Nature] [main] c.e.Luana_Nature.LuanaNatureApplication  : Started LuanaNatureApplication in 3.167 seconds (process running for 3.656)
+2024-11-29T18:13:59.295+02:00  INFO 24916 --- [Luana_Nature] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-29T18:13:59.295+02:00  INFO 24916 --- [Luana_Nature] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-29T18:13:59.296+02:00  INFO 24916 --- [Luana_Nature] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-11-29T18:13:59.307+02:00 DEBUG 24916 --- [Luana_Nature] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /companies
+2024-11-29T18:13:59.313+02:00 DEBUG 24916 --- [Luana_Nature] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /companies
+2024-11-29T18:13:59.452+02:00 DEBUG 24916 --- [Luana_Nature] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-29T18:13:59.474+02:00 DEBUG 24916 --- [Luana_Nature] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /pictures/companii_1.jpeg
+2024-11-29T18:13:59.475+02:00 DEBUG 24916 --- [Luana_Nature] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /pictures/companii_1.jpeg
+2024-11-29T18:13:59.483+02:00 DEBUG 24916 --- [Luana_Nature] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-29T18:13:59.484+02:00 DEBUG 24916 --- [Luana_Nature] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2024-11-29T18:13:59.485+02:00 DEBUG 24916 --- [Luana_Nature] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /favicon.ico
+2024-11-29T18:13:59.489+02:00 DEBUG 24916 --- [Luana_Nature] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-29T18:13:59.494+02:00 DEBUG 24916 --- [Luana_Nature] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /error
+2024-11-29T18:13:59.494+02:00 DEBUG 24916 --- [Luana_Nature] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /error
+2024-11-29T18:13:59.544+02:00 DEBUG 24916 --- [Luana_Nature] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
