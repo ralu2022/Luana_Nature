@@ -5,16 +5,16 @@ import lombok.*;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "users")
-@NoArgsConstructor
+
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String name;
     private String email;
-    @Column(nullable = false, unique = true)
     private String username;
     private String password;
     private String role;
@@ -25,4 +25,5 @@ public class User {
         this.username = username;
         this.password = password;
     }
+
 }

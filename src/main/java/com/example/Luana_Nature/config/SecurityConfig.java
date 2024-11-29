@@ -25,7 +25,21 @@ public class SecurityConfig {
                                 .anyRequest().authenticated()
                 )
                 .httpBasic(Customizer.withDefaults())
-                .formLogin(Customizer.withDefaults());
+                .formLogin(form -> form
+                        .loginPage("/users/signin")
+                        .loginProcessingUrl("/users/signin")
+                        .defaultSuccessUrl("/index", true)
+                        .failureUrl("/users/signin?error=true")
+                        .permitAll()
+                )
+                .logout(logout -> logout
+                        .logoutUrl("/logout")
+                        .logoutSuccessUrl("/index")
+                        .invalidateHttpSession(true)
+                        .deleteCookies("JSESSIONID")
+                        .permitAll()
+                )
+                .httpBasic(Customizer.withDefaults());
 
         return http.build();
     }

@@ -1,0 +1,7 @@
+
+1. Resetare index in baza de date:
+
+SELECT
+    pg_get_serial_sequence('users', 'id') AS sequence_name;
+
+ALTER SEQUENCE public.users_id_seq RESTART WITH 1;

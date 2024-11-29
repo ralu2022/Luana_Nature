@@ -8,11 +8,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 
-public class UserDetailsService implements UserDetails {
+public class MyUserPrincipal implements UserDetails {
 
     private User user;
 
-    public UserDetailsService(User user) {
+    public MyUserPrincipal(User user) {
         this.user=user;
     }
 
@@ -21,6 +21,9 @@ public class UserDetailsService implements UserDetails {
         return List.of(new SimpleGrantedAuthority(user.getRole()));
     }
 
+    public String getEmail() {
+        return user.getEmail();
+    }
     @Override
     public String getPassword() {
         return user.getPassword() ;

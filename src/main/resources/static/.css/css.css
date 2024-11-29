@@ -1,0 +1,44 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animated-text {
+    animation: fadeIn 2s ease-in-out;
+    font-family: Gabriola, Tahoma, sans-serif;
+    text-align: center;
+    font-size: 5rem;
+    color: coral;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animated-card {
+    opacity: 0;
+    animation: slideUp 2s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+.small-carousel {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.carousel-image {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+}

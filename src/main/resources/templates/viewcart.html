@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+</head>
+<body>
+<h1>Shopping Cart</h1>
+<div th:if="${cartProducts.isEmpty()}">
+    <p>Your cart is empty!</p>
+</div>
+<div th:if="${not cartProducts.isEmpty()}">
+    <ul>
+        <li th:each="product : ${cartProducts}">
+            <span th:text="${product.name}">Product Name</span> -
+            <span th:text="${product.price}">Price</span>
+        </li>
+    </ul>
+    <form action="/cart/clear" method="post">
+        <input type="hidden" name="userId" th:value="${user.id}">
+        <button type="submit">Clear Cart</button>
+    </form>
+
+</div>
+</body>
+</html>

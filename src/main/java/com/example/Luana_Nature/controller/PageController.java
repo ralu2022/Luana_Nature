@@ -12,12 +12,12 @@ public class PageController {
         return "index";
     }
 
-    @GetMapping("/companii")
+    @GetMapping("/companies")
     public String companii() {
         return "companies";
     }
 
-    @GetMapping("/individual")
+    @GetMapping("/individuals")
     public String individual() {
         return "individuals";
     }
@@ -27,15 +27,6 @@ public class PageController {
         return "kidsarea";
     }
 
-    @GetMapping("/store")
-    public String store() {
-        return "store";
-    }
-
-    @GetMapping("/reservation")
-    public String rezervare() {
-        return "reservation";
-    }
 
     @GetMapping("/aboutus")
     public String aboutus() {

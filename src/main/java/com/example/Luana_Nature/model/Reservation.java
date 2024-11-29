@@ -15,16 +15,16 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    String name;
-    String email;
-    String phone;
-    String company;
-    LocalDate arrivalDate;
-    LocalDate departureDate;
-    Integer numberOfPersons;
-    String acomodation;
-    String catering;
-    String cateringMentions;
-    String drinking;
-    String message;
+    private LocalDate arrivalDate;
+    private String name;
+    private String email;
+    private String phone;
+    private String company;
+    private LocalDate departureDate;
+    private int numberOfPersons;
+    private String accommodationType;
+    private String cateringType;
+    private String cateringMentions;
+    private String drinkType;
+    private String message;
 }

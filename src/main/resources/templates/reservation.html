@@ -12,7 +12,7 @@
 
 <br>
 
-<nav class="navbar navbar-expand-sm bg-secondary navbar-dark fixed-top">
+<nav class="navbar navbar-expand-sm bg-secondary  fixed-top">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,82 +64,92 @@
       max-width: 600px; width: 100%; max-height: 820px; margin-top: 20px; margin-bottom: 40px;overflow-y:auto;
 font-family:'Lucida Console'; ">
     <h2 style="margin-bottom: 20px; color: #343a40; text-align: center;font-family:Algerian">Rezervare generala</h2>
-    <form>
+    <form th:action="@{/reservations/addReservation}" th:object="${reservation}" method="post">
         <div class="form-group">
             <label for="name">Nume*:</label>
-            <input type="text" class="form-control" id="name" placeholder="Numele dvs." required
+            <input type="text" th:field="*{name}" id="name" class="form-control" placeholder="Numele dvs." required
                    style="border-radius: 5px;">
         </div>
         <div class="form-group">
             <label for="email">Email*:</label>
-            <input type="email" class="form-control" id="email" placeholder="Adresă de e-mail" required
+            <input type="email" th:field="*{email}" id="email" class="form-control" placeholder="Adresă de e-mail" required
                    style="border-radius: 5px;">
         </div>
         <div class="form-group">
             <label for="phone">Număr de telefon*:</label>
-            <input type="tel" class="form-control" id="phone" placeholder="Număr de telefon" required
+            <input type="text" th:field="*{phone}" id="phone" class="form-control" placeholder="Număr de telefon" required
                    style="border-radius: 5px;">
         </div>
         <div class="form-group">
             <label for="companie">Companie (dacă este cazul):</label>
-            <input type="tel" class="form-control" id="companie" placeholder="Companie" required
+            <input type="text" th:field="*{company}" id="companie" class="form-control"  placeholder="Companie" required
                    style="border-radius: 5px;">
         </div>
         <div class="form-group">
             <label for="datasosire">Data sosirii*:</label>
-            <input type="date" class="form-control" id="datasosire" required style="border-radius: 5px;">
-        </div> <!-- setari data sistem -->
+            <input type="date" th:field="*{arrivalDate}" id="datasosire" class="form-control" style="border-radius:
+             5px;"  th:min="${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}" required>
+            <div th:if="${param.arrivalDateError != null}" class="text-danger" role="alert">
+                Arrival date cannot be after departure date!
+            </div>
+        </div>
         <div class="form-group">
             <label for="dataplecare">Data plecării*:</label>
-            <input type="date" class="form-control" id="dataplecare" required style="border-radius: 5px;">
+            <input type="date" th:field="*{departureDate}" id="dataplecare" class="form-control"  style="border-radius:
+             5px;"  th:min ="${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}"
+                   required>
+            <div th:if="${param.departureDateError != null}" class="text-danger">
+                Departure date cannot be before arrival date.
+            </div>
         </div>
         <div class="form-group">
             <label for="persoane">Număr de persoane*:</label>
-            <input type="numar" class="form-control" id="persoane" placeholder="Introduceți numărul de persoane"
+            <input type="text" th:field="*{numberOfPersons}" id="persoane" class="form-control" placeholder="Introduceți numărul de persoane"
                    required style="border-radius: 5px;">
         </div>
         <div class="form-group mb-3">
             <label for="listacazare">Opțiune de cazare*:</label>
-            <select class="form-control" id="listacazare" name="options"
+            <select th:field="*{accommodationType}" class="form-control" id="listacazare" name="options"
                     required style="border-radius: 5px;" place-holder=Alegeți o opțiune>
-                <option value="1">A-Frame</option>
-                <option value="2">Gampling</option>
-                <option value="3">Căsuțe de lemn</option>
+                <option value="A-Frame">A-Frame</option>
+                <option value="Gampling">Gampling</option>
+                <option value="Căsuțe de lemn">Căsuțe de lemn</option>
             </select>
         </div>
         <div class="form-group mb-3">
             <label for="catering">Catering*:</label>
-            <select class="form-control" id="catering" name="options"
+            <select th:field="*{cateringType}" class="form-control" id="catering" name="options"
                     required style="border-radius: 5px;" place-holder=Alegeți o opțiune>
-                <option value="1">Self-catering</option>
-                <option value="2">Mic dejun</option>
-                <option value="3">Demipensiune</option>
-                <option value="4">All-inclusive</option>
+                <option value="Self-catering">Self-catering</option>
+                <option value="Mic dejun">Mic dejun</option>
+                <option value="Demipensiune">Demipensiune</option>
+                <option value="All-inclusive">All-inclusive</option>
             </select>
         </div>
         <div class="form-group">
             <label for="mentiunimancare">Mențiuni speciale mâncare:</label>
-            <textarea class="form-control" id="mentiunimancare" rows="4"
+            <textarea th:field="*{cateringMentions}" class="form-control" id="mentiunimancare" rows="4"
                       placeholder="Mențiuni speciale mâncare (vegan,intoleranțe)"
                       style="border-radius: 5px;"></textarea>
         </div>
         <p>Doriți adăugarea ratei fixe de băuturi/răcoritoare (100 ron/zi)</p>
         <div class="form-check">
-            <input type="radio" class="form-check-input" id="bautura1" name="optradio" value="bautura1" checked>Da
-            <label class="form-check-label" for="bautura1"></label>
+            <input type="radio" th:field="*{drinkType}" id="da" class="form-check-input"  name="optradio" value="da" checked>Da
+            <label class="form-check-label" for="da"></label>
         </div>
         <div class="form-check">
-            <input type="radio" class="form-check-input" id="bautura2" name="optradio" value="bautura2">Nu
-            <label class="form-check-label" for="bautura2"></label>
+            <input type="radio" th:field="*{drinkType}" id="nu" class="form-check-input"  name="optradio" value="nu" checked>Nu
+            <label class="form-check-label" for="nu"></label>
         </div>
         <div class="form-check">
-            <input type="radio" class="form-check-input" id="bautura3" name="optradio" value="bautura3">Nu știu încă
-            <label class="form-check-label"></label>
+            <input type="radio" th:field="*{drinkType}" id="nu știu încă" class="form-check-input" name="optradio"
+                   value="nu știu încă" checked>Nu știu încă
+            <label class="form-check-label" for="nu știu încă"></label>
         </div>
         <br>
         <div class="form-group">
             <label for="mesaj">Mesaj:</label>
-            <textarea class="form-control" id="mesaj" rows="4" placeholder="Alte întrebări și cereri"
+            <textarea th:field="*{message}" class="form-control" id="mesaj" rows="4" placeholder="Alte întrebări și cereri"
                       style="border-radius: 5px;"></textarea>
         </div>
         <button type="submit" class="btn btn-info"
