@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/.css/css.css">
+    <title>Rezervare generală</title>
+</head>
+
+<body style="background-image:url('/pictures/fundata_0.jpg');">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Meniu -->
+<nav class="navbar navbar-expand-sm bg-white fixed-top">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavleft">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/mainpage}"><b>Acasă</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/companies}"><b>Companii</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/individuals}"><b>Individual</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/kids}"><b>Lumea copiilor</b></a>
+                </li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/index}"><b>Delogare</b></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <b>Rezervări</b>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" th:href="@{/reservations/reservations}">Rezervările mele</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/aboutus}"><b>Despre noi</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       th:href="@{/contact}"><b>Contact</b></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br>
+
+<p style="font-size: 45px; font-family: Elephant; text-align: center;"> Luana Nature
+<br>
+
+<div class="container"
+     style="background: darksalmon; padding:30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
+     max-width: 600px; width: 100%; max-height: 820px; margin-top: 20px; margin-bottom: 40px;overflow-y:auto;
+     font-family:'Lucida Console'; ">
+    <h2 style="margin-bottom: 20px; color: #343a40; text-align: center;font-family:Algerian">Rezervare generala</h2>
+    <form th:action="@{/reservations/addReservation}" th:object="${reservation}" method="post">
+        <div class="form-group">
+            <label for="name">Nume*:</label>
+            <input type="text" th:field="*{name}" id="name" class="form-control" placeholder="Numele dvs." required
+                   style="border-radius: 5px;">
+        </div>
+        <div class="form-group">
+            <label for="email">Email*:</label>
+            <input type="email" th:field="*{email}" id="email" class="form-control" placeholder="Adresă de e-mail"
+                   required style="border-radius: 5px;">
+        </div>
+        <div class="form-group">
+            <label for="phone">Număr de telefon*:</label>
+            <input type="text" th:field="*{phone}" id="phone" class="form-control" placeholder="Număr de telefon"
+                   required style="border-radius: 5px;">
+        </div>
+        <div class="form-group">
+            <label for="companie">Companie (dacă este cazul):</label>
+            <input type="text" th:field="*{company}" id="companie" class="form-control" placeholder="Companie"
+                   style="border-radius: 5px;">
+        </div>
+        <div class="form-group">
+            <label for="datasosire">Data sosirii*:</label>
+            <input type="date" th:field="*{arrivalDate}" id="datasosire" class="form-control" placeholder="Dată sosire"
+                   style="border-radius: 5px;">
+        </div>
+        <div class="form-group">
+            <label for="dataplecare">Data plecării*:</label>
+            <input type="date" th:field="*{departureDate}" id="dataplecare" class="form-control" placeholder="Dată plecare"
+                   style="border-radius: 5px;">
+        </div>
+        <div class="form-group">
+            <label for="persoane">Număr de persoane*:</label>
+            <input type="text" th:field="*{numberOfPersons}" id="persoane" class="form-control"
+                   placeholder="Introduceți numărul de persoane" required style="border-radius: 5px;">
+        </div>
+        <div class="form-group mb-3">
+            <label for="listacazare">Opțiune de cazare*:</label>
+            <select th:field="*{accommodationType}" id="listacazare" class="form-control" name="options"
+                    required style="border-radius: 5px;">
+                <option value="A-Frame">A-Frame</option>
+                <option value="Gampling">Gampling</option>
+                <option value="Căsuțe de lemn">Căsuțe de lemn</option>
+            </select>
+        </div>
+        <div class="form-group mb-3">
+            <label for="catering">Catering*:</label>
+            <select th:field="*{cateringType}" class="form-control" id="catering" name="options"
+                    required style="border-radius: 5px;">
+                <option value="Self-catering">Self-catering</option>
+                <option value="Mic dejun">Mic dejun</option>
+                <option value="Demipensiune">Demipensiune</option>
+                <option value="All-inclusive">All-inclusive</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="mentiunimancare">Mențiuni speciale mâncare:</label>
+            <textarea th:field="*{cateringMentions}" class="form-control" id="mentiunimancare" rows="4"
+                      placeholder="Mențiuni speciale mâncare (vegan,intoleranțe)" style="border-radius: 5px;"></textarea>
+        </div>
+        <p>Doriți adăugarea ratei fixe de băuturi/răcoritoare (100 ron/zi)</p>
+        <div class="form-check">
+            <input type="radio" th:field="*{drinkType}" id="da" class="form-check-input" value="da">Da
+            <label class="form-check-label" for="da"></label>
+        </div>
+        <div class="form-check">
+            <input type="radio" th:field="*{drinkType}" id="nu" class="form-check-input" value="nu">Nu
+            <label class="form-check-label" for="nu"></label>
+        </div>
+        <div class="form-check">
+            <input type="radio" th:field="*{drinkType}" id="nuStiuInca" class="form-check-input" value="nu știu încă">Nu știu încă
+            <label class="form-check-label" for="nuStiuInca"></label>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="mesaj">Mesaj:</label>
+            <textarea th:field="*{message}" class="form-control" id="mesaj" rows="4" placeholder="Alte întrebări și cereri"
+                      style="border-radius: 5px;"></textarea>
+        </div>
+        <button type="submit" class="btn btn-info" style="display: block; margin: auto;"><b>Trimite</b>
+        </button>
+    </form>
+</div>
+<br>
+
+<!-- Nota subsol -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    </section>
+    <section class="">
+        <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        <i class=""></i>Luana Nature
+                    </h6>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Link-uri utile
+                    </h6>
+                    <p>
+                        <a th:href="@{/mainpage}" class="text-reset">Acasă</a>
+                    </p>
+                    <p>
+                        <a th:href="@{/companies}" class="text-reset">Companii</a>
+                    </p>
+                    <p>
+                        <a th:href="@{/individuals}" class="text-reset">Individual</a>
+                    </p>
+                    <p>
+                        <a th:href="@{/kids}" class="text-reset">Lumea copiilor</a>
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                    <p><i class="fas fa-home me-3"></i> Comuna Fundata, Brasov, RO</p>
+                    <p>
+                        <i class="fas fa-envelope me-3"></i>
+                        luananature2024@gmail.com
+                    </p>
+                    <p><i class="fas fa-phone me-3"></i> + 40 268 477 698</p>
+                    <p><i class="fas fa-mobile-alt me-3"></i> + 40 724 789 718</p>
+                    <h6 class="text-uppercase fw-bold mb-4">Rețele sociale</h6>
+                    <a href="https://www.facebook.com/profile.php?id=61569606121431" class="me-4" style="color: darkslategrey">
+                        <p><i class="fab fa-facebook-f"></i> Facebook </p>
+                    </a>
+                    <a href="https://www.instagram.com/luana20241209/" class="me-4 text-reset">
+                        <p><i class="fab fa-instagram"></i> Instagram </p>
+                    </a>
+                </div>
+                <div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="text-center p-4 me-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024
+        <a class="text-reset me-3" th:href="@{/termsofservice}">Termene și condiții</a>
+        <a class="text-reset me-3" th:href="@{/politics}">Politica de confidențialitate</a>
+        <a class="text-reset" th:href="@{/imprint}">Imprint</a>
+    </div>
+</footer>
+
+</body>
+</html>

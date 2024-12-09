@@ -13,6 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/users")
@@ -43,24 +44,28 @@ public class UserDataController {
         return "redirect:/index";
     }
 
-    @GetMapping("/signin")
+    @GetMapping("/login")
     public String logInForm(Model model) {
         model.addAttribute("user", new User());
-        return "signin";
+        return "login";
     }
 
-    @PostMapping("/signin")
+    @PostMapping("/login")
     public String signIn(@RequestParam String username,
                          @RequestParam String password,
                          Model model) {
         UserDetails userDetails = userDataService.loadUserByUsername(username);
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-        if (passwordEncoder.matches(password, userDetails.getPassword())) {
-            model.addAttribute("user", userDetails);
-
+        if (!passwordEncoder.matches(password, userDetails.getPassword())) {
+            model.addAttribute("error", "Username sau parola sunt greșite!");
+            return "index";
         }
-        return "index";
+
+        return "redirect:/mainpage";
     }
+
+
 }
+
 

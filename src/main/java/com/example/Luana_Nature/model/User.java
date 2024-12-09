@@ -3,6 +3,10 @@ package com.example.Luana_Nature.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -11,19 +15,19 @@ import lombok.*;
 
 public class User {
     @Id
+    @Column(name="user_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long userId;
     private String name;
     private String email;
     private String username;
     private String password;
     private String role;
 
-    public User(String name, String email, String username, String password) {
-        this.name = name;
-        this.email = email;
-        this.username = username;
-        this.password = password;
-    }
+    @OneToMany(mappedBy = "reservationUser")
+    private List<Reservation> reservationList;
+
+    @OneToMany(mappedBy = "orderUser")
+    private List<Order> orderList;
 
 }

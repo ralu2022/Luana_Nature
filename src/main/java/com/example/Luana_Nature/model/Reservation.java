@@ -14,12 +14,13 @@ import java.time.LocalDate;
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private LocalDate arrivalDate;
+    private Long reservationId;
+
     private String name;
     private String email;
     private String phone;
     private String company;
+    private LocalDate arrivalDate;
     private LocalDate departureDate;
     private int numberOfPersons;
     private String accommodationType;
@@ -27,4 +28,11 @@ public class Reservation {
     private String cateringMentions;
     private String drinkType;
     private String message;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User reservationUser;
+
+
+
 }

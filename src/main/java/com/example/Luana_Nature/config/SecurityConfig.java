@@ -13,33 +13,31 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 @Configuration
 public class SecurityConfig {
-
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests((authorize) -> authorize
-                                .requestMatchers("/login", "/index").permitAll()
-                                .requestMatchers("/**", "/").permitAll()
-                                .requestMatchers("/admin/*").hasRole("ADMIN")
-                                .anyRequest().authenticated()
+                        .requestMatchers("/","/*", "/**","/users/login", "/users/register","/index","/login",
+                                "/reservations/addReservation","/welcome").permitAll()
+                        .requestMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
+                        .anyRequest().authenticated()
                 )
-                .httpBasic(Customizer.withDefaults())
                 .formLogin(form -> form
-                        .loginPage("/users/signin")
-                        .loginProcessingUrl("/users/signin")
-                        .defaultSuccessUrl("/index", true)
-                        .failureUrl("/users/signin?error=true")
+                        .loginPage("/index")
+                        .failureUrl("/index?error=true")
+                        .defaultSuccessUrl("/welcome")
                         .permitAll()
                 )
                 .logout(logout -> logout
                         .logoutUrl("/logout")
-                        .logoutSuccessUrl("/index")
+                        .logoutSuccessUrl("/login")
                         .invalidateHttpSession(true)
                         .deleteCookies("JSESSIONID")
                         .permitAll()
                 )
                 .httpBasic(Customizer.withDefaults());
+
 
         return http.build();
     }
@@ -48,5 +46,4 @@ public class SecurityConfig {
     public PasswordEncoder encoder() {
         return new BCryptPasswordEncoder();
     }
-
 }

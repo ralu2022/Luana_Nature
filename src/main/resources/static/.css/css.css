@@ -42,3 +42,27 @@
     object-fit: cover;
     width: 100%;
 }
+
+.rounded-image {
+    border-radius: 100%;
+    display: block;
+}
+
+.small-image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+
+div.scroll-container {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+    padding: 10px;
+}
+
+div.scroll-container img {
+    padding: 10px;
+}
+
+
