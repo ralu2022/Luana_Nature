@@ -1,27 +1,27 @@
-package com.example.Luana_Nature.controller;
+/*package com.example.Luana_Nature.util.notinuse.product;
+
+
 
 import com.example.Luana_Nature.model.Product;
-import com.example.Luana_Nature.service.ProductService;
+
+
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequiredArgsConstructor
-
-
 public class ProductController {
 
     private final ProductService productService;
 
+
     @GetMapping("/store")
     public String listAllProducts(Model model) {
-        List<Product> products = productService.getAllProducts();
-        model.addAttribute("products", products);
+        model.addAttribute("products", productService.getAllProducts());
         return "store";
     }
 
@@ -41,13 +41,6 @@ public class ProductController {
         return "redirect:/products/products";
     }
 
-    @PostMapping("/submitOrder")
-    @ResponseBody
-    public ResponseEntity<String> submitOrder(@RequestBody List<Product> products) {
-
-        System.out.println("Order received: " + products);
-        return ResponseEntity.ok("Order submitted successfully!");
-    }
 
 
-}
+}*/

@@ -48,4 +48,20 @@ public class EmailService {
             System.out.println("Error sending email: " + e.getMessage());
         }
     }
+
+    public void sendAdminEmail(String toAdmin, String subject, String text) {
+        SimpleMailMessage adminMessage = new SimpleMailMessage();
+        adminMessage.setTo(toAdmin);
+        adminMessage.setSubject(subject);
+        adminMessage.setText(text);
+        notification.send(adminMessage);
+
+        try {
+            notification.send(adminMessage);
+            System.out.println("Email sent successfully!");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error sending email: " + e.getMessage());
+        }
+    }
 }

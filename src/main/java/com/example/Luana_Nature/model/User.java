@@ -1,11 +1,10 @@
 package com.example.Luana_Nature.model;
 
+
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Data
 @AllArgsConstructor
@@ -27,7 +26,13 @@ public class User {
     @OneToMany(mappedBy = "reservationUser")
     private List<Reservation> reservationList;
 
-    @OneToMany(mappedBy = "orderUser")
-    private List<Order> orderList;
+    @OneToMany(mappedBy = "reviewUser")
+    private List<Review> reviewList;
+
+    @OneToMany(mappedBy = "contactUser")
+    private List<Contact> contactList;
+
+    @OneToMany(mappedBy = "productUser")
+    private List<Product> productList;
 
 }

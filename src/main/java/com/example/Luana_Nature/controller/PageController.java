@@ -1,16 +1,7 @@
 package com.example.Luana_Nature.controller;
 
-
-import com.example.Luana_Nature.model.User;
-import com.example.Luana_Nature.repository.UserRepository;
-import com.example.Luana_Nature.service.MyUserDetailsService;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import java.security.Principal;
-import java.util.Optional;
 
 @Controller
 public class PageController {
@@ -18,6 +9,11 @@ public class PageController {
     @GetMapping("/login")
     public String login() {
         return "login";
+    }
+
+    @GetMapping("/loginadmin")
+    public String loginadmin() {
+        return "loginadmin";
     }
 
     @GetMapping("/index")
@@ -30,11 +26,9 @@ public class PageController {
         return "mainpage";
     }
 
-    @GetMapping("/welcome")
-    public String welcome(Model model, Principal principal) {
-        String username = principal.getName();
-        model.addAttribute("username", username);
-        return "welcome";
+    @GetMapping("/mainpageuser")
+    public String mainpageuser() {
+        return "mainpageuser";
     }
 
     @GetMapping("/companies")
@@ -50,6 +44,16 @@ public class PageController {
     @GetMapping("/kids")
     public String kids() {
         return "kids";
+    }
+
+    @GetMapping("/catering")
+    public String catering() {
+        return "catering";
+    }
+
+    @GetMapping("/cateringvegan")
+    public String cateringvegan() {
+        return "cateringvegan";
     }
 
     @GetMapping("/aboutus")

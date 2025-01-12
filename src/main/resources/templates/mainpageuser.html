@@ -44,25 +44,25 @@
                         <li><a class="dropdown-item" th:href="@{/cateringvegan}">Vegan</a></li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/store}"><b>Magazin</b></a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownReview" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">
                         <b>Recenzii</b>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownReview">
-                        <li><a class="dropdown-item disabled"  aria-disabled="true" th:href="@{/reviews/reviews}">Listă recenzii</a></li>
-                        <li><a class="dropdown-item disabled"  aria-disabled="true" th:href="@{/reviews/review}">Recenzie nouă</a></li>
+                        <li><a class="dropdown-item" th:href="@{/reviews/reviews}">Listă recenzii</a></li>
+                        <li><a class="dropdown-item" th:href="@{/reviews/review}">Recenzie nouă</a></li>
                     </ul>
                 </li>
             </ul>
-            <div class="d-flex justify-content-center align-items-center mx-3">
-                <p>Pentru adăugare recenzii și rezervări, vă rugăm să vă logați</p>
-            </div>
         </div>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/index}"><b>Logare</b></a>
+                    <a class="nav-link" th:href="@{/index}"><b>Delogare</b></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -70,8 +70,8 @@
                         <b>Rezervări</b>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item disabled"  aria-disabled="true" th:href="@{/reservations/reservations}">Rezervările mele</a></li>
-                        <li><a class="dropdown-item disabled"  aria-disabled="true" th:href="@{/reservations/reservation}">Rezervare nouă</a></li>
+                        <li><a class="dropdown-item" th:href="@{/reservations/reservations}">Rezervările mele</a></li>
+                        <li><a class="dropdown-item" th:href="@{/reservations/reservation}">Rezervare nouă</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -110,118 +110,118 @@
         <div class="col-md-4">
             <h1>Statistici</h1><br>
             <div>
-                <h5>Tipuri de cazare</h5><br>
-                <canvas id="reservationPieChart" style="max-width:400px;height:100px"></canvas>
-                <br>
-                <script>
-                    fetch('/reservations/api/count-by-type')
-                        .then(response => response.json())
-                        .then(data => {
-                            const labels = data.map(item => item.type);
-                            const counts = data.map(item => item.count);
+            <h5>Tipuri de cazare</h5><br>
+            <canvas id="reservationPieChart" style="max-width:400px;height:100px"></canvas>
+            <br>
+            <script>
+                fetch('/reservations/api/count-by-type')
+                    .then(response => response.json())
+                    .then(data => {
+                        const labels = data.map(item => item.type);
+                        const counts = data.map(item => item.count);
 
-                            const ctx = document.getElementById('reservationPieChart').getContext('2d');
-                            new Chart(ctx, {
-                                type: 'pie',
-                                data: {
-                                    labels: labels,
-                                    datasets: [{
-                                        label: 'Reservation Types',
-                                        data: counts,
-                                        backgroundColor: [
-                                            'rgba(255, 99, 132, 0.2)',
-                                            'rgba(54, 162, 235, 0.2)',
-                                            'rgba(255, 206, 86, 0.2)',
-                                            'rgba(75, 192, 192, 0.2)'
-                                        ],
-                                        borderColor: [
-                                            'rgba(255, 99, 132, 1)',
-                                            'rgba(54, 162, 235, 1)',
-                                            'rgba(255, 206, 86, 1)',
-                                            'rgba(75, 192, 192, 1)'
-                                        ],
-                                        borderWidth: 1
-                                    }]
-                                },
-                                options: {
-                                    responsive: true
-                                }
-                            });
-                        })
-                        .catch(error => console.error('Error fetching reservation data:', error));
-                </script>
-                <br>
+                        const ctx = document.getElementById('reservationPieChart').getContext('2d');
+                        new Chart(ctx, {
+                            type: 'pie',
+                            data: {
+                                labels: labels,
+                                datasets: [{
+                                    label: 'Reservation Types',
+                                    data: counts,
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(75, 192, 192, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                responsive: true
+                            }
+                        });
+                    })
+                    .catch(error => console.error('Error fetching reservation data:', error));
+            </script>
+            <br>
             </div>
             <div>
-                <h5>Review-uri</h5><br>
-                <canvas id="reviewBarChart" style="max-width:400px;height:100px"></canvas>
-                <br><br>
-                <script>
-                    fetch('/reviews/countReviewsByRating')
-                        .then(response => response.json())
-                        .then(data => {
-                            const labels = data.map(item => item.rating + "-stars");
-                            const counts = data.map(item => item.count);
+            <h5>Review-uri</h5><br>
+            <canvas id="reviewBarChart" style="max-width:400px;height:100px"></canvas>
+            <br><br>
+            <script>
+                fetch('/reviews/countReviewsByRating')
+                    .then(response => response.json())
+                    .then(data => {
+                        const labels = data.map(item => item.rating + "-stars");
+                        const counts = data.map(item => item.count);
 
-                            const ctx = document.getElementById('reviewBarChart').getContext('2d');
-                            new Chart(ctx, {
-                                type: 'bar',
-                                data: {
-                                    labels: labels,
-                                    datasets: [{
-                                        label: 'Review Rating',
-                                        data: counts,
-                                        backgroundColor: [
-                                            'rgba(255, 99, 132, 0.2)',
-                                            'rgba(54, 162, 235, 0.2)',
-                                            'rgba(255, 206, 86, 0.2)',
-                                            'rgba(75, 192, 192, 0.2)'
-                                        ],
-                                        borderColor: [
-                                            'rgba(255, 99, 132, 1)',
-                                            'rgba(54, 162, 235, 1)',
-                                            'rgba(255, 206, 86, 1)',
-                                            'rgba(75, 192, 192, 1)'
-                                        ],
-                                        borderWidth: 1
-                                    }]
-                                },
-                                options: {
-                                    responsive: true,
-                                    scales: {
-                                        x: {
-                                            ticks: {
-                                                min: 1,
-                                                max: 5,
-                                                stepSize: 1
-                                            },
-                                            title: {
-                                                display: true,
-                                                text: 'Reviews'
-                                            }
+                        const ctx = document.getElementById('reviewBarChart').getContext('2d');
+                        new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: labels,
+                                datasets: [{
+                                    label: 'Review Rating',
+                                    data: counts,
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(75, 192, 192, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                scales: {
+                                    x: {
+                                        ticks: {
+                                            min: 1,
+                                            max: 5,
+                                            stepSize: 1
                                         },
-                                        y: {
-                                            ticks: {
-                                                min: 1,
-                                                max: 5,
-                                                stepSize: 1
-                                            },
-                                            title: {
-                                                display: true,
-                                                text: 'Număr de review-uri'
-                                            }
+                                        title: {
+                                            display: true,
+                                            text: 'Reviews'
+                                        }
+                                    },
+                                    y: {
+                                        ticks: {
+                                            min: 1,
+                                            max: 5,
+                                            stepSize: 1
+                                        },
+                                        title: {
+                                            display: true,
+                                            text: 'Număr de review-uri'
                                         }
                                     }
-
                                 }
-                            });
-                        })
-                        .catch(error => console.error('Error fetching reservation data:', error));
-                </script>
+
+                            }
+                        });
+                    })
+                    .catch(error => console.error('Error fetching reservation data:', error));
+            </script>
             </div>
         </div>
 
-        <!-- Servici oferite -->
+       <!-- Servici oferite -->
         <div class="col-md-8 main-container w-container">
             <!-- Ce oferim? -->
             <p style="font-family: Tahoma; text-align:center; font-size: 5rem; font-family: Gabriola; color:coral"><b>

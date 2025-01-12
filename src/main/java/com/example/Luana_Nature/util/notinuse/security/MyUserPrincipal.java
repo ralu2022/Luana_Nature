@@ -1,8 +1,7 @@
-package com.example.Luana_Nature.service;
+/*package com.example.Luana_Nature.service;
 
 import com.example.Luana_Nature.model.User;
 import lombok.Data;
-import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,16 +10,13 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+@Data
 public class MyUserPrincipal implements UserDetails {
 
     private final User user;
 
     public MyUserPrincipal(User user) {
         this.user=user;
-    }
-
-    public User getUser() {
-        return user;
     }
 
     @Override
@@ -63,4 +59,4 @@ public class MyUserPrincipal implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-}
+}*/

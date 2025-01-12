@@ -33,6 +33,4 @@ public class Reservation {
     @JoinColumn(name = "user_id")
     private User reservationUser;
 
-
-
 }

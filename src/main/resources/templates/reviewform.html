@@ -10,8 +10,11 @@
     <link rel="stylesheet" href="/.css/css.css">
 </head>
 
-<body>
+<body style="background-color: wheat;">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
 <!-- Meniu -->
 <nav class="navbar navbar-expand-sm bg-white fixed-top">
@@ -23,9 +26,6 @@
         <div class="collapse navbar-collapse" id="navbarNavleft">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/mainpage}"><b>Acasă</b></a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" th:href="@{/companies}"><b>Companii</b></a>
                 </li>
                 <li class="nav-item">
@@ -34,6 +34,20 @@
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/kids}"><b>Lumea copiilor</b></a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropDownCatering" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        <b>Catering</b>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropDownCatering">
+                        <li><a class="dropdown-item" th:href="@{/catering}">Normal</a></li>
+                        <li><a class="dropdown-item" th:href="@{/cateringvegan}">Vegan</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="nav-link" th:href="@{/reviewform}"><b>Review</b></a>
+                </li>
+
             </ul>
         </div>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -42,10 +56,12 @@
                     <a class="nav-link" th:href="@{/index}"><b>Delogare</b></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
                         <b>Rezervări</b>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" th:href="@{/reservations/reservations}">Rezervările mele</a></li>
                         <li><a class="dropdown-item" th:href="@{/reservations/reservation}">Rezervare nouă</a></li>
                     </ul>
                 </li>
@@ -54,7 +70,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link"
-                       th:href="@{/contact}"><b>Contact</b></a>
+                       th:href="@{/contactMessages/contactMessage}"><b>Contact</b></a>
                 </li>
             </ul>
         </div>
@@ -62,63 +78,37 @@
 </nav>
 <br>
 
-<!-- Imagine -->
-
-<div class="card" style="width: 100%; position: relative;">
-    <img class="card-img-top" src="/pictures/reservations_0.jpg" alt="Centered image" style="height: 500px;
-    width: 100%;object-fit: cover;">
-</div>
-<br>
-
-<!-- Listă rezervări -->
 
 <div class="container mt-5">
-    <h2>Rezervările tale</h2>
-</div>
-<br>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-12">
-            <div class="card shadow-2-strong">
-                <div class="card-body p-0">
-                    <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true"
-                         style="position: relative; height: 700px">
-                        <table class="table">
-                            <thead class ="table-info">
-                            <tr class="text-uppercase text-success">
-                                <th scope="col">Număr rezervare</th>
-                                <th scope="col">Nume rezervare</th>
-                                <th scope="col">Companie</th>
-                                <th scope="col">Dată sosire</th>
-                                <th scope="col">Dată plecare</th>
-                                <th scope="col">Număr de persoane</th>
-                                <th scope="col">Tip cazare</th>
-                                <th scope="col">Tip catering</th>
-                                <th scope="col">Tip băutură</th>
-
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr th:each="reservation: ${reservations}">
-                                <th><p th:text="${reservation.reservationId}"></p>
-                                <th><p th:text="${reservation.name}"></p>
-                                <th><p th:text="${reservation.company}"></p>
-                                <th><p th:text="${reservation.arrivalDate}"></p>
-                                <th><p th:text="${reservation.departureDate}"></p>
-                                <th><p th:text="${reservation.numberOfPersons}"></p>
-                                <th><p th:text="${reservation.accommodationType}"></p>
-                                <th><p th:text="${reservation.cateringType}"></p>
-                                <th><p th:text="${reservation.drinkType}"></p><th>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+    <h2 class="text-center">Rate Our Service</h2>
+    <form action="/reviews/addReview" method="POST">
+        <div class="mb-3">
+            <label for="rating" class="form-label">Rating (1-5 stars):</label>
+            <div class="rating" id="rating">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5" class="fa fa-star"></label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4" class="fa fa-star"></label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3" class="fa fa-star"></label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2" class="fa fa-star"></label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1" class="fa fa-star"></label>
             </div>
         </div>
-    </div>
+        <div class="mb-3">
+            <label for="comment" class="form-label">Your Comment:</label>
+            <textarea class="form-control" id="comment" name="comment" rows="4" placeholder="Write your review here..."></textarea>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit Rating</button>
+        </div>
+    </form>
 </div>
-<br><br>
+
+
+
 
 <!-- Nota subsol -->
 <footer class="text-center text-lg-start bg-body-tertiary text-muted">
@@ -136,9 +126,6 @@
                     <h6 class="text-uppercase fw-bold mb-4">
                         Link-uri utile
                     </h6>
-                    <p>
-                        <a th:href="@{/mainpageuser}" class="text-reset">Acasă</a>
-                    </p>
                     <p>
                         <a th:href="@{/companies}" class="text-reset">Companii</a>
                     </p>
@@ -160,7 +147,8 @@
                     <p><i class="fas fa-phone me-3"></i> + 40 268 477 698</p>
                     <p><i class="fas fa-mobile-alt me-3"></i> + 40 724 789 718</p>
                     <h6 class="text-uppercase fw-bold mb-4">Rețele sociale</h6>
-                    <a href="https://www.facebook.com/profile.php?id=61569606121431" class="me-4" style="color: darkslategrey">
+                    <a href="https://www.facebook.com/profile.php?id=61569606121431" class="me-4"
+                       style="color: darkslategrey">
                         <p><i class="fab fa-facebook-f"></i> Facebook </p>
                     </a>
                     <a href="https://www.instagram.com/luana20241209/" class="me-4 text-reset">

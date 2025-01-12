@@ -59,7 +59,7 @@
         </div>
     </div>
 </nav>
-<br>
+<br><br><br>
 
 <p style="font-size: 45px; font-family: Elephant; text-align: center;"> Luana Nature
 <br>
@@ -94,11 +94,19 @@
             <label for="datasosire">Data sosirii*:</label>
             <input type="date" th:field="*{arrivalDate}" id="datasosire" class="form-control" placeholder="Dată sosire"
                    style="border-radius: 5px;">
+            <script>
+                const today = new Date().toISOString().split('T')[0];
+                document.getElementById('datasosire').setAttribute('min', today);
+            </script>
         </div>
         <div class="form-group">
             <label for="dataplecare">Data plecării*:</label>
             <input type="date" th:field="*{departureDate}" id="dataplecare" class="form-control" placeholder="Dată plecare"
                    style="border-radius: 5px;">
+            <script>
+                const today = new Date().toISOString().split('T')[0];
+                document.getElementById('dataplecare').setAttribute('min', today);
+            </script>
         </div>
         <div class="form-group">
             <label for="persoane">Număr de persoane*:</label>

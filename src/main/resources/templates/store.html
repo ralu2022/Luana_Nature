@@ -45,7 +45,8 @@
                     <a class="nav-link" th:href="@{/index}"><b>Delogare</b></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
                         <b>Rezervări</b>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -71,37 +72,141 @@
     <img class="card-img-top" src="/pictures/magazin_0.webp" alt="Centered image" style="height: 500px;
     width: 100%;object-fit: cover;">
     <br><br><br><br>
-<div class="container mt-5">
-    <h2>Produsele noastre</h2>
-    <br><br>
-    <div class="row">
-        <div th:each="product : ${products}" class="col-md-4">
-            <div class="card mb-4">
-                <img th:src="@{/pictures/produse_1.jpeg}"
-                     th:if="${product.name == 'Honey Bunny'}"
-                     class="card-img-top" alt="Imagine produs">
-                <img th:src="@{/pictures/produse_2.jpeg}"
-                     th:if="${product.name == 'Călătorii pentru o viață'}"
-                     class="card-img-top" alt="Imagine produs">
-                <img th:src="@{/pictures/cana_0.webp}"
-                     th:if="${product.name == 'Puffy cups'}"
-                     class="card-img-top" alt="Imagine produs">
-                <div class="card-body">
-                    <h5 class="card-title" th:text="${product.name}">Denumire produs</h5>
-                    <p class="card-text">
-                        Preț: <span th:text="${product.price}">Pret</span> RON
-                    </p>
-                    <p class="card-text">
-                        Descriere: <span th:text="${product.description}">Pret</span> RON
-                    </p>
+    <div class="container mt-5">
+        <h2>Produsele noastre</h2>
+        <br><br>
+        <div class="row">
+            <div th:each="product : ${products}" class="col-md-4">
+                <div class="card mb-4">
+                    <img th:src="@{/pictures/produse_1.jpeg}"
+                         th:if="${product.name == 'Honey Bunny'}"
+                         class="card-img-top" alt="Imagine produs">
+                    <img th:src="@{/pictures/cana_0.webp}"
+                         th:if="${product.name == 'Puffy cups'}"
+                         class="card-img-top" alt="Imagine produs">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${product.name}">Denumire produs</h5>
+                        <p class="card-text">
+                            Preț: <span th:text="${product.price}">Pret</span> RON
+                        </p>
+                        <p class="card-text">
+                            Descriere: <span th:text="${product.description}">Descriere</span>
+                        </p>
+                        <button class="btn btn-primary"
+                                th:attr="data-product-id=${product.productId}, data-product-name=${product.name}, data-product-price=${product.price}"
+                                onclick="handleAddToOrder(this)"
+                                type="button">Add to Order</button>
+                        <script>
+                            // Initialize an empty array to store the order
+                            const order = [];
 
+                            /**
+                             * Function to handle adding a product to the order
+                             * @param {HTMLElement} buttonElement - The button element that triggered the event
+                             */
+                            function handleAddToOrder(buttonElement) {
+                                const productId = parseInt(buttonElement.getAttribute('data-product-id')); // Parse product ID as an integer
+                                const productName = buttonElement.getAttribute('data-product-name'); // Get product name
+                                const productPrice = parseFloat(buttonElement.getAttribute('data-product-price')); // Parse price as a float
+
+                                // Validate price
+                                if (isNaN(productPrice)) {
+                                    alert(`Invalid price for product: ${productName}`);
+                                    return;
+                                }
+
+                                addToOrder(productId, productName, productPrice);
+                            }
+
+                            /**
+                             * Add a product to the order array
+                             * @param {number} productId - The ID of the product
+                             * @param {string} productName - The name of the product
+                             * @param {number} price - The price of the product
+                             */
+                            function addToOrder(productId, productName, price) {
+                                // Check if the product already exists in the order
+                                const existingProduct = order.find(item => item.id === productId);
+                                if (existingProduct) {
+                                    // Increment the quantity if the product is already in the order
+                                    existingProduct.quantity += 1;
+                                } else {
+                                    // Add a new product to the order
+                                    order.push({ id: productId, name: productName, price: price, quantity: 1 });
+                                }
+                                updateOrderPreview(); // Update the order preview
+                            }
+
+                            /**
+                             * Update the order preview displayed on the page
+                             */
+                            function updateOrderPreview() {
+                                const orderPreview = document.getElementById('orderPreview');
+                                orderPreview.innerHTML = ''; // Clear the existing preview
+
+                                // Iterate through the order and display each item
+                                order.forEach(item => {
+                                    const total = item.price * item.quantity; // Calculate total price for the product
+
+                                    // Validate total
+                                    if (isNaN(total)) {
+                                        alert(`Invalid total for product: ${item.name}`);
+                                        return;
+                                    }
+
+                                    // Create a row for the product in the preview
+                                    const productRow = document.createElement('div');
+                                    productRow.textContent = `${item.name} (x${item.quantity}) - ${total.toFixed(2)} RON`;
+                                    orderPreview.appendChild(productRow);
+                                });
+                            }
+
+                            /**
+                             * Submit the order to the server
+                             */
+                            async function submitOrder() {
+                                // Check if the order is empty
+                                if (order.length === 0) {
+                                    alert('Your order is empty!');
+                                    return;
+                                }
+
+                                try {
+                                    // Send the order to the server
+                                    const response = await fetch('/products/submitOrder', {
+                                        method: 'POST',
+                                        headers: { 'Content-Type': 'application/json' },
+                                        body: JSON.stringify(order) // Send the order as JSON
+                                    });
+
+                                    if (response.ok) {
+                                        alert('Order submitted successfully!');
+                                        order.length = 0; // Clear the order
+                                        updateOrderPreview(); // Update the preview
+                                    } else {
+                                        alert('Failed to submit the order!');
+                                    }
+                                } catch (error) {
+                                    alert('An error occurred while submitting the order!');
+                                    console.error(error); // Log the error for debugging
+                                }
+                            }
+                        </script>
+                    </div>
                 </div>
             </div>
         </div>
+        <br><br>
+        <h2>Your Order</h2>
+        <div id="orderPreview"></div>
+        <br>
+        <button onclick="submitOrder()" class="btn btn-success">Place Order</button>
+
+        <br><br>
     </div>
 </div>
-</div>
 <br><br><br>
+
 
 <!-- Nota subsol -->
 <footer class="text-center text-lg-start bg-body-tertiary text-muted">
@@ -143,7 +248,8 @@
                     <p><i class="fas fa-phone me-3"></i> + 40 268 477 698</p>
                     <p><i class="fas fa-mobile-alt me-3"></i> + 40 724 789 718</p>
                     <h6 class="text-uppercase fw-bold mb-4">Rețele sociale</h6>
-                    <a href="https://www.facebook.com/profile.php?id=61569606121431" class="me-4" style="color: darkslategrey">
+                    <a href="https://www.facebook.com/profile.php?id=61569606121431" class="me-4"
+                       style="color: darkslategrey">
                         <p><i class="fab fa-facebook-f"></i> Facebook </p>
                     </a>
                     <a href="https://www.instagram.com/" class="me-4 text-reset">

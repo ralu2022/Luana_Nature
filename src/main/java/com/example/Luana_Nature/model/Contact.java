@@ -1,30 +1,26 @@
 package com.example.Luana_Nature.model;
 
-
 import jakarta.persistence.*;
-import lombok.*;
-
-
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "products")
+@Table(name = "contact")
 
-public class Product {
+public class Contact {
     @Id
+    @Column(name="contact_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="product_id")
-    private Long productId;
+    private Long contactId;
     private String name;
-    private int price;
-    private int stock;
-    private String description;
-    private String category;
+    private String message;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User productUser;
+    private User contactUser;
 
 }

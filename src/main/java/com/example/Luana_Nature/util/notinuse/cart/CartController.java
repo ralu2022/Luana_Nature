@@ -7,7 +7,7 @@ import com.example.Luana_Nature.repository.ProductRepository;
 import com.example.Luana_Nature.repository.UserRepository;
 import com.example.Luana_Nature.service.CartService;
 import com.example.Luana_Nature.service.MyUserPrincipal;
-import com.example.Luana_Nature.service.ProductService;
+import com.example.Luana_Nature.util.notinuse.product.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;

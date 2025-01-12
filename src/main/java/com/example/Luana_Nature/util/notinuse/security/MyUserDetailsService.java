@@ -1,4 +1,4 @@
-package com.example.Luana_Nature.service;
+/*package com.example.Luana_Nature.service;
 
 import com.example.Luana_Nature.model.User;
 import com.example.Luana_Nature.repository.UserRepository;
@@ -33,9 +33,15 @@ public class MyUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) {
-        return userRepository.findByUsername(username)
-                .map(MyUserPrincipal::new)
-                .orElseThrow(() -> new UsernameNotFoundException(username));
+        User user = userRepository.findByUsername(username);
+
+        if (user == null) {
+            throw new UsernameNotFoundException("User-ul nu a fost găsit!");
+        }
+
+        return new MyUserPrincipal(user);
+
+
     }
-}
+}*/
 

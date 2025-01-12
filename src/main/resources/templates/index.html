@@ -36,7 +36,7 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" th:href="@{/index}"><b>Delogare</b></a>
+          <a class="nav-link" th:href="@{/index}"><b>Logare</b></a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -67,8 +67,8 @@
       <div class="modal-body p-1" style="background-image: url(/pictures/fundata_logare.webp)">
         <form th:action="@{/users/login}" method="post">
           <section class="radient-custom" style="min-height: 5vh;">
-            <div class="container py-3 h-100">
-              <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="container py-3 h-80">
+              <div class="row d-flex justify-content-center align-items-center h-80">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                   <div class="card bg-dark text-white" style="border-radius: 1rem;">
                     <div class="card-body p-5 text-center">
@@ -94,7 +94,10 @@
                           <p class="mb-0">Nu aveți deja cont?
                             <a th:href="@{/users/register}" class="text-white-50 fw-bold">Înregistrați-vă</a>
                           </p>
-
+                          <div class="text-center p-4 me-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                            <a th:href="@{/mainpage}" class="text-blue-50 fw-bold me-3" >Vizitator</a>
+                            <a th:href="@{/loginadmin}" class="text-blue-50 fw-bold me-3">Admin</a>
+                          </div>
                         </div>
                       </div>
                     </div>

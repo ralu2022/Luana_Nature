@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,7 +43,8 @@
                     <a class="nav-link" th:href="@{/index}"><b>Delogare</b></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
                         <b>Rezervări</b>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -74,14 +75,32 @@
     <div class="row" style="justify-content: center">
         <div class="col-sm-4 ">
             <h2 style="font-size: 50px "><b>Contactați-ne</b></h2><br>
-            <p>Str. Bucegi nr.10, Comuna Fundata, Brasov, RO</p>
-            <p>E-mail: luananature2024@gmail.com</p>
-            <p>Telefon: +40 0268 477 698</p>
-            <p>Mobil: +40 724 789 718</p>
+            <form th:action="@{/contactMessages/addContactMessage}" th:object="${contact}" method="post">
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                        <i class="fas fa-user fa-lg me-5 fa-fw"></i>
+                        <label for="name"></label>
+                        <input type="text" th:field="*{name}" id="name" placeholder="Numele dvs.">
+                    </div>
+                </div>
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-5 fa-fw"></i>
+                    <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                        <label for="message"> </label>
+                        <textarea th:field="*{message}" id="message" placeholder="Mesajul dvs." style="height: 200px"></textarea>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button type="submit" data-mdb-button-init data-mdb-ripple-init
+                            class="btn btn-info btn-lg">Trimite
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
 <br><br><br>
+
 
 <footer class="text-center text-lg-start bg-body-tertiary text-muted">
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
@@ -122,7 +141,8 @@
                     <p><i class="fas fa-phone me-3"></i> + 40 268 477 698</p>
                     <p><i class="fas fa-mobile-alt me-3"></i> + 40 724 789 718</p>
                     <h6 class="text-uppercase fw-bold mb-4">Rețele sociale</h6>
-                    <a href="https://www.facebook.com/profile.php?id=61569606121431" class="me-4" style="color: darkslategrey">
+                    <a href="https://www.facebook.com/profile.php?id=61569606121431" class="me-4"
+                       style="color: darkslategrey">
                         <p><i class="fab fa-facebook-f"></i> Facebook </p>
                     </a>
                     <a href="https://www.instagram.com/luana20241209/" class="me-4 text-reset">
