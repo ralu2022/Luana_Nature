@@ -18,6 +18,13 @@ public class ProductController {
 
     private final ProductService productService;
 
+    @GetMapping("/storeproducts")
+    public String AllProducts(Model model) {
+        List<Product> products = productService.getAllProducts();
+        model.addAttribute("products", products);
+        return "storeproducts";
+    }
+
     @GetMapping("/store")
     public String listAllProducts(Model model) {
         List<Product> products = productService.getAllProducts();

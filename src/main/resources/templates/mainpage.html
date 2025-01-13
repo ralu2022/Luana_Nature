@@ -38,6 +38,16 @@
                     <a class="nav-link" th:href="@{/catering}"><b>Catering</b></a>
                 </li>
                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownStore" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        <b>Magazin</b>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownReview">
+                        <li><a class="dropdown-item disabled"  aria-disabled="true" th:href="@{/storeproducts}">Produse</a></li>
+                        <li><a class="dropdown-item disabled"  aria-disabled="true" th:href="@{/store}">Comandă nouă</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownReview" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">
                         <b>Recenzii</b>
@@ -91,7 +101,7 @@
         </p>
         <p class="animated-text"
            style="font-size: 20px; font-family:cursive; color: antiquewhite; text-align: center; margin: 0;">
-            Bun veni pe pagina noastră: pentru adăugare recenzii și rezervări, vă rugăm să vă logați
+            Bun veni pe pagina noastră: pentru adăugare recenzii, comenzi și rezervări, vă rugăm să vă logați
         </p>
     </div>
 </div>
