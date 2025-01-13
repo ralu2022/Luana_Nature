@@ -54,10 +54,13 @@ public class ReservationController {
                                  @RequestParam String cateringType,
                                  @RequestParam String cateringMentions,
                                  @RequestParam String drinkType,
+                                 @RequestParam String activity,
+                                 @RequestParam String period,
                                  @RequestParam String message) {
 
+
         reservationService.addReservation(name, email,phone,company,arrivalDate,departureDate,numberOfPersons,
-                accommodationType,cateringType,cateringMentions,drinkType,message);
+                accommodationType,cateringType,cateringMentions,drinkType,activity,period,message);
         return "redirect:/reservations/reservations";
     }
 

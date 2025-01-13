@@ -24,7 +24,7 @@ public class ReservationService {
 
     public void addReservation(String name, String email, String phone, String company, LocalDate arrivalDate,
                                LocalDate departureDate, int numberOfPersons, String accommodationType, String cateringType,
-                               String cateringMentions, String drinkType, String message) {
+                               String cateringMentions, String drinkType, String activity, String period,String message) {
 
         Reservation reservation = new Reservation();
         reservation.setName(name);
@@ -38,6 +38,8 @@ public class ReservationService {
         reservation.setCateringType(cateringType);
         reservation.setCateringMentions(cateringMentions);
         reservation.setDrinkType(drinkType);
+        reservation.setActivity(activity);
+        reservation.setPeriod(period);
         reservation.setMessage(message);
 
         reservationRepository.save(reservation);

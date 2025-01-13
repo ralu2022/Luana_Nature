@@ -28,6 +28,8 @@ public class Reservation {
     private String cateringMentions;
     private String drinkType;
     private String message;
+    private String activity;
+    private String period;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

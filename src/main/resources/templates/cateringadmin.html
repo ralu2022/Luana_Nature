@@ -40,6 +40,9 @@
         </div>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/index}"><b>Delogare</b></a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">
@@ -78,237 +81,56 @@
 
     <!-- Secțiunea Non-Vegan -->
     <div style="margin-top: 30px; text-align: left;">
-        <h3 style="margin-left: 10%;">🍖 Meniu Non-Vegan - bucate pentru iubitorii de carne </h3>
+        <h3 style="margin-left: 10%;">🍖 Meniu Non-Vegan - bucate pentru iubitorii de carne și produse tradiționale </h3>
         <div style="max-height: 400px; overflow-y: auto; margin: auto; width: 80%; border: 1px solid #ccc;">
             <table style="width: 100%; border-collapse: collapse; text-align: center;">
                 <thead style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">
                 <tr>
                     <th style="padding: 10px; border-bottom: 2px solid #ccc;">Denumire</th>
-                    <th style="padding: 10px; border-bottom: 2px solid #ccc;">Preț (RON)</th>
+                    <th style="padding: 10px; border-bottom: 2px solid #ccc;">Preț</th>
                     <th style="padding: 10px; border-bottom: 2px solid #ccc;">Imagine</th>
                 </tr>
                 </thead>
                 <tbody>
-                <!-- Aperitive -->
                 <tr>
                     <td colspan="3" style="padding: 10px; background-color: #f1f1f1; font-size: 18px; text-align: left;">
                         🍽️ Aperitive
                     </td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px;">ANTIPASTO DI MARE 250g
-                        (CREVETI, CARACATITA, CALAMARI BABY, MIX DE SALATA, PAINE,
-                        LAMAIE, USTUROI, VIN ALB) *2,4,9,14</td>
-                    <td style="padding: 10px;">126</td>
+                    <td style="padding: 10px;">Salată cu quinoa</td>
+                    <td style="padding: 10px;">$7.50</td>
                     <td style="padding: 10px;">
-                        <a href="/pictures/catering_0.jpg" target="_blank">
-                        <img src="/pictures/catering_0.jpg" alt="ANTIPASTO DI MARE" style="width: 100px; height: auto;">
-                        </a>
+                        <img src="quinoa_salad.jpg" alt="Salată cu quinoa" style="width: 100px; height: auto;">
                     </td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px;">ANTIPASTO DI TERRA 250g
-                        (BRESAOLA, SALAMURI, PROSCIUTTO, BUFALA, BRANZETURI, ANGHINARE,
-                        ROSII USCATE) *2</td>
-                    <td style="padding: 10px;">82</td>
+                    <td style="padding: 10px;">Burger vegetal</td>
+                    <td style="padding: 10px;">$9.00</td>
                     <td style="padding: 10px;">
-                        <a href="/pictures/catering_1.jpg" target="_blank">
-                            <img src="/pictures/catering_1.jpg" alt="ANTIPASTO DI TERRA" style="width: 100px;
-                             height: auto;">
-                        </a>
+                        <img src="vegan_burger.jpg" alt="Burger vegetal" style="width: 100px; height: auto;">
                     </td>
                 </tr>
-                <tr>
-                    <td style="padding: 10px;">VITELLO TONNATO 220g
-                        (CARNE DE VIȚEL, SOS DE TON, PARMEZAN, CAPERE, RUCOLA,
-                        CRUTOANE) *1,3,9,12</td>
-                    <td style="padding: 10px;">65</td>
-                    <td style="padding: 10px;">
-                        <a href="/pictures/catering_2.jpg" target="_blank">
-                        <img src="/pictures/catering_2.jpg" alt="VITELLO TONNATO" style="width: 100px; height: auto;">
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px;">FOIE GRAS DI CANARD 170g
-                        (PATE DE FICAT DE RATA, CHUTNEY DE MANGO) *9</td>
-                    <td style="padding: 10px;">95</td>
-                    <td style="padding: 10px;">
-                        <a href="/pictures/catering_3.jpg" target="_blank">
-                        <img src="/pictures/catering_3.jpg" alt="FOIE GRAS DI CANARD" style="width: 100px; height: auto;">
-                        </a>
-                    </td>
-
-                </tr>
-                <tr>
-                    <td style="padding: 10px;">CARPACCIO DI MANZO CON TARTUFO 200g
-                        (MUSCHI DE VITA, CREMA TRUFE, BRANZA DE CAPRA, MIX DE
-                        SALATA, PARMEZAN) *2,3</td>
-                    <td style="padding: 10px;">72</td>
-                    <td style="padding: 10px;">
-                        <a href="/pictures/catering_4.jpg" target="_blank">
-                        <img src="/pictures/catering_4.jpg" alt="CARPACCIO DI MANZO " style="width: 100px; height: auto;">
-                        </a>
-                    </td>
-                </tr>
-                <!-- Supe -->
                 <tr>
                     <td colspan="3" style="padding: 10px; background-color: #f1f1f1; font-size: 18px; text-align: left;">
                         🍲 Supe
                     </td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px;">*FUNGHI AL GORGONZOLA E TARTUFO 400g
-                        (CREMA DE CIUPERCI, CROSTINI CU GORGONZOLA, CREMA DE TRUFE)
-                        *2,3,9 *</td>
-                    <td style="padding: 10px;">40</td>
-                    <td style="padding: 10px;">
-                        <a href="/pictures/catering_5.jpg" target="_blank">
-                            <img src="/pictures/catering_5.jpg" alt="FUNGHI AL GORGONZOLA " style="width: 100px; height: auto;">
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px;">ZUPPA DI PESCE 450g
-                        (FRUCTE DE MARE, SOS DE ROSII) *3,4,5,9,14</td>
-                    <td style="padding: 10px;">72</td>
-                    <td style="padding: 10px;">
-                        <a href="/pictures/catering_6.jpg" target="_blank">
-                            <img src="/pictures/catering_6.jpg" alt="ZUPPA DI PESCE " style="width: 100px; height: auto;">
-                        </a>
-                    </td>
-                </tr>
-                <!-- Fel principal -->
-                <tr>
                     <td colspan="3" style="padding: 10px; background-color: #f1f1f1; font-size: 18px; text-align: left;">
                         🍛 Fel Principal
                     </td>
                 </tr>
-                <tr>
-                    <td style="padding: 10px;">*FILETTO PRATO 180/40g
-                        (MUSCHI DE VITA BLACK ANGUS LA GRATAR, HRIBI, CREMA DE TRUFE)
-                        *2,3</td>
-                    <td style="padding: 10px;">146</td>
-                    <td style="padding: 10px;">
-                        <a href="/pictures/catering_7.jpg" target="_blank">
-                            <img src="/pictures/catering_7.jpg" alt="FILETTO PRATO " style="width: 100px; height: auto;">
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px;">BRACIOLE DI MAIALE IBERICO 250/140g
-                        (COTLET DE PORC IBERIC SOUS VIDE, ARDEI COPT, BABY CARTOFI, SOS
-                        DEMIGLACE)* 2,9,10</td>
-                    <td style="padding: 10px;">153</td>
-                    <td style="padding: 10px;">
-                        <a href="/pictures/catering_8.jpg" target="_blank">
-                            <img src="/pictures/catering_8.jpg" alt="BRACIOLE DI MAIALE  " style="width: 100px; height: auto;">
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px;">FEGATO D’ANATRA CON MELE CARAMELLATE
-                        130/70/20g
-                        (FICAT DE RATA, MERE CARAMELIZATE, DULCEATA AFINE) *2</td>
-                    <td style="padding: 10px;">165</td>
-                    <td style="padding: 10px;">
-                        <a href="/pictures/catering_9.jpg" target="_blank">
-                            <img src="/pictures/catering_9.jpg" alt="FEGATO D’ANATRA" style="width: 100px; height: auto;">
-                        </a>
-                    </td>
-                </tr>
-
-                <!-- Desert -->
                 <tr>
                     <td colspan="3" style="padding: 10px; background-color: #f1f1f1; font-size: 18px; text-align: left;">
                         🍰 Desert
                     </td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px;">CARPACCIO DI MANZO CON TARTUFO 200g
-                        (MUSCHI DE VITA, CREMA TRUFE, BRANZA DE CAPRA, MIX DE
-                        SALATA, PARMEZAN) *2,3</td>
-                    <td style="padding: 10px;">72</td>
-                    <td style="padding: 10px;">
-                        <a href="/pictures/catering_4.jpg" target="_blank">
-                            <img src="/pictures/catering_4.jpg" alt="CARPACCIO DI MANZO " style="width: 100px; height: auto;">
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px;">CARPACCIO DI MANZO CON TARTUFO 200g
-                        (MUSCHI DE VITA, CREMA TRUFE, BRANZA DE CAPRA, MIX DE
-                        SALATA, PARMEZAN) *2,3</td>
-                    <td style="padding: 10px;">72</td>
-                    <td style="padding: 10px;">
-                        <a href="/pictures/catering_4.jpg" target="_blank">
-                            <img src="/pictures/catering_4.jpg" alt="CARPACCIO DI MANZO " style="width: 100px; height: auto;">
-                        </a>
-                    </td>
-                </tr>
-
-                <!-- Băuturi -->
-                <tr>
                     <td colspan="3" style="padding: 10px; background-color: #f1f1f1; font-size: 18px; text-align: left;">
                         🍹 Băuturi
                     </td>
                 </tr>
-                <tr>
-                    <td style="padding: 10px;">CARPACCIO DI MANZO CON TARTUFO 200g
-                        (MUSCHI DE VITA, CREMA TRUFE, BRANZA DE CAPRA, MIX DE
-                        SALATA, PARMEZAN) *2,3</td>
-                    <td style="padding: 10px;">72</td>
-                    <td style="padding: 10px;">
-                        <a href="/pictures/catering_4.jpg" target="_blank">
-                            <img src="/pictures/catering_4.jpg" alt="CARPACCIO DI MANZO " style="width: 100px; height: auto;">
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px;">CARPACCIO DI MANZO CON TARTUFO 200g
-                        (MUSCHI DE VITA, CREMA TRUFE, BRANZA DE CAPRA, MIX DE
-                        SALATA, PARMEZAN) *2,3</td>
-                    <td style="padding: 10px;">72</td>
-                    <td style="padding: 10px;">
-                        <a href="/pictures/catering_4.jpg" target="_blank">
-                            <img src="/pictures/catering_4.jpg" alt="CARPACCIO DI MANZO " style="width: 100px; height: auto;">
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px;">CARPACCIO DI MANZO CON TARTUFO 200g
-                        (MUSCHI DE VITA, CREMA TRUFE, BRANZA DE CAPRA, MIX DE
-                        SALATA, PARMEZAN) *2,3</td>
-                    <td style="padding: 10px;">72</td>
-                    <td style="padding: 10px;">
-                        <a href="/pictures/catering_4.jpg" target="_blank">
-                            <img src="/pictures/catering_4.jpg" alt="CARPACCIO DI MANZO " style="width: 100px; height: auto;">
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px;">CARPACCIO DI MANZO CON TARTUFO 200g
-                        (MUSCHI DE VITA, CREMA TRUFE, BRANZA DE CAPRA, MIX DE
-                        SALATA, PARMEZAN) *2,3</td>
-                    <td style="padding: 10px;">72</td>
-                    <td style="padding: 10px;">
-                        <a href="/pictures/catering_4.jpg" target="_blank">
-                            <img src="/pictures/catering_4.jpg" alt="CARPACCIO DI MANZO " style="width: 100px; height: auto;">
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px;">CARPACCIO DI MANZO CON TARTUFO 200g
-                        (MUSCHI DE VITA, CREMA TRUFE, BRANZA DE CAPRA, MIX DE
-                        SALATA, PARMEZAN) *2,3</td>
-                    <td style="padding: 10px;">72</td>
-                    <td style="padding: 10px;">
-                        <a href="/pictures/catering_4.jpg" target="_blank">
-                            <img src="/pictures/catering_4.jpg" alt="CARPACCIO DI MANZO " style="width: 100px; height: auto;">
-                        </a>
-                    </td>
-                </tr>
-
                 </tbody>
             </table>
         </div>

@@ -5,3 +5,8 @@ SELECT
     pg_get_serial_sequence('users', 'id') AS sequence_name;
 
 ALTER SEQUENCE public.users_id_seq RESTART WITH 1;
+
+
+/*const productRow = document.createElement('div');
+            productRow.textContent = `${item.name} (x${item.quantity}) - ${total.toFixed(2)} RON`;
+            orderPreview.appendChild(productRow);*/

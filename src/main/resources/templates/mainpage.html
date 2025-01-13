@@ -34,15 +34,8 @@
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/kids}"><b>Lumea copiilor</b></a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropDownCatering" role="button"
-                       data-bs-toggle="dropdown" aria-expanded="false">
-                        <b>Catering</b>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropDownCatering">
-                        <li><a class="dropdown-item" th:href="@{/catering}">Normal</a></li>
-                        <li><a class="dropdown-item" th:href="@{/cateringvegan}">Vegan</a></li>
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/catering}"><b>Catering</b></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownReview" role="button"
@@ -55,9 +48,6 @@
                     </ul>
                 </li>
             </ul>
-            <div class="d-flex justify-content-center align-items-center mx-3">
-                <p>Pentru adăugare recenzii și rezervări, vă rugăm să vă logați</p>
-            </div>
         </div>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
@@ -98,6 +88,10 @@
         <p class="animated-text"
            style="font-size: 50px; font-family: 'Lucida Handwriting', cursive; color: antiquewhite; text-align: center; margin: 0;">
             Work & Relax
+        </p>
+        <p class="animated-text"
+           style="font-size: 20px; font-family:cursive; color: antiquewhite; text-align: center; margin: 0;">
+            Bun veni pe pagina noastră: pentru adăugare recenzii și rezervări, vă rugăm să vă logați
         </p>
     </div>
 </div>
@@ -289,9 +283,6 @@
                                     Căsuțele de tip
                                     A-Frame sunt perfect pentru
                                     grupuri de prieteni, familii și team-building. </p>
-                                <div class="button-container" style="display: flex; justify-content: center;">
-                                    <a th:href="@{/reservations/reservation}" class="btn btn-info">Rezervare</a>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -306,9 +297,6 @@
                                     experiență aparte camerele de
                                     tip cort reprezintă cea mai bună alegere.
                                 </p>
-                                <div class="button-container" style="display: flex; justify-content: center;">
-                                    <a th:href="@{/reservations/reservation}" class="btn btn-info">Rezervare</a>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -321,9 +309,6 @@
                                 <p class="card-text"
                                    style="justify-content:center; font-family:'Bookman Old Style'; font-size: 15px">
                                     Alegerea perfectă pentru cei care iubesc muntele în esenta lui.</p>
-                                <div class="button-container" style="display: flex; justify-content: center;">
-                                    <a th:href="@{/reservations/reservation}" class="btn btn-info">Rezervare</a>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -344,9 +329,6 @@
                                    style="justify-content: center;font-family:'Bookman Old Style'; font-size: 15px">
                                     Birourile individuale
                                     oferă un spațiu privat în mijlocul naturii.</p>
-                                <div class="button-container" style="display: flex; justify-content: center;">
-                                    <a th:href="@{/reservations/reservation}" class="btn btn-info">Rezervare</a>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -360,9 +342,6 @@
                                     ai nevoie să lucrezi
                                     la un proiect, este alegere perfectă!
                                 </p>
-                                <div class="button-container" style="display: flex; justify-content: center;">
-                                    <a th:href="@{/reservations/reservation}" class="btn btn-info">Rezervare</a>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -375,9 +354,6 @@
                                 <p class="card-text"
                                    style="justify-content:center; font-family:'Bookman Old Style'; font-size: 15px">
                                     Pentru momentele în care e nevoie de discuții și decizii!</p>
-                                <div class="button-container" style="display: flex; justify-content: center;">
-                                    <a th:href="@{/reservations/reservation}" class="btn btn-info">Rezervare</a>
-                                </div>
                             </div>
                         </div>
                     </div>

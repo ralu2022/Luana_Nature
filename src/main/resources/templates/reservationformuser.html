@@ -109,7 +109,7 @@
             </script>
         </div>
         <div class="form-group">
-            <label for="persoane">Număr de persoane* (min.1):</label>
+            <label for="persoane">Număr de persoane*:</label>
             <input type="text" th:field="*{numberOfPersons}" id="persoane" class="form-control"
                    placeholder="Introduceți numărul de persoane" required style="border-radius: 5px;">
         </div>
@@ -137,7 +137,7 @@
             <textarea th:field="*{cateringMentions}" class="form-control" id="mentiunimancare" rows="4"
                       placeholder="Mențiuni speciale mâncare (vegan,intoleranțe)" style="border-radius: 5px;"></textarea>
         </div>
-        <p>Doriți adăugarea ratei fixe de băuturi/răcoritoare (100 ron/zi) - cafea, răcoritoare, alcool</p>
+        <p>Doriți adăugarea ratei fixe de băuturi/răcoritoare (100 ron/zi)</p>
         <div class="form-check">
             <input type="radio" th:field="*{drinkType}" id="da" class="form-check-input" value="da">Da
             <label class="form-check-label" for="da"></label>
@@ -150,117 +150,6 @@
             <input type="radio" th:field="*{drinkType}" id="nuStiuInca" class="form-check-input" value="nu știu încă">Nu știu încă
             <label class="form-check-label" for="nuStiuInca"></label>
         </div>
-        <br>
-
-        <div class="form-group mb-3">
-            <label for="activity" style="text-decoration: underline;">Pachete de activități - companii</label>
-            <br><br>
-            <div id="activity">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" th:field="*{activity}" value="Team building companii" id="teamBuilding">
-                    <label class="form-check-label" for="teamBuilding">Team building
-                        (inclus ture în natură, tiroliană și închiriere biciclete) </label>
-                    <select th:field="*{period}" class="form-control mt-2" id="teamBuildingPeriod" name="teamBuildingPeriod" style="border-radius: 5px; display: inline-block; width: auto;">
-                        <option value="">Selectați perioada</option>
-                        <option value="ianuarie - decembrie">15 iunie - 22 iunie </option>
-                        <option value="aprilie - octombrie">10 iulie - 17 iulie </option>
-                        <option value="iunie - septembrie">5 august - 12 august </option>
-                    </select>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" th:field="*{activity}" value="Ture în natură companii" id="natureTour">
-                    <label class="form-check-label" for="natureTour">Ture în natură(inclus închiriere biciclete)</label><br>
-                    <select th:field="*{period}" class="form-control mt-2" id="Ture în natură companii" name="Ture în natură companii" style="border-radius: 5px; display: inline-block; width: auto;">
-                        <option value="">Selectați perioada</option>
-                        <option value="ianuarie - decembrie">14 aprilie - 21 aprilie</option>
-                        <option value="aprilie - octombrie">18 iulie - 25 iulie </option>
-                        <option value="iunie - septembrie">5 septembrie - 12 septembrie</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group mb-3">
-            <label for="activity1" style="text-decoration: underline;">Pachete de activități - individual</label>
-            <br><br>
-            <div id="activity1">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" th:field="*{activity}" value="Ture în natură" id="natura">
-                    <label class="form-check-label" for="teamBuilding">Ture în natură
-                       </label><br>
-                    <select th:field="*{period}" class="form-control mt-2" id="natura1" name="natura1" style="border-radius: 5px; display: inline-block; width: auto;">
-                        <option value="">Selectați perioada</option>
-                        <option value="ianuarie - decembrie">23 iunie - 30 iunie </option>
-                        <option value="aprilie - octombrie">05 iulie - 12 iulie </option>
-                        <option value="iunie - septembrie">13 august - 20 august </option>
-                    </select>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" th:field="*{activity}" value="Ture în natură companii" id="biciclete">
-                    <label class="form-check-label" for="natureTour">Închiriere biciclete)</label><br>
-                    <select th:field="*{period}" class="form-control mt-2" id="biciclete1" name="Ture în natură companii" style="border-radius: 5px; display: inline-block; width: auto;">
-                        <option value="">Selectați perioada</option>
-                        <option value="ianuarie - decembrie">14 aprilie - 21 aprilie</option>
-                        <option value="aprilie - octombrie">18 iulie - 25 iulie </option>
-                        <option value="iunie - septembrie">5 septembrie - 12 septembrie</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group mb-3">
-            <label for="activity" style="text-decoration: underline;">Pachete de activități - copii</label>
-            <br><br>
-            <div id="activity2">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" th:field="*{activity}" value="Team building companii" id="after">
-                    <label class="form-check-label" for="teamBuilding">After school
-                         </label><br>
-                    <select th:field="*{period}" class="form-control mt-2" id="afterschool" name="after" style="border-radius: 5px; display: inline-block; width: auto;">
-                        <option value="">Selectați perioada</option>
-                        <option value="ianuarie - decembrie">15 aprilie - 22 aprilie </option>
-                        <option value="aprilie - octombrie">15 iunie - 22 septembrie </option>
-                        <option value="iunie - septembrie">01 decembrie - 20 decembrie </option>
-                    </select>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" th:field="*{activity}" value="Ture în natură companii" id="loc">
-                    <label class="form-check-label" for="natureTour">Loc de joacă - abonament</label><br>
-                    <select th:field="*{period}" class="form-control mt-2" id="locjoaca" name="Ture în natură companii" style="border-radius: 5px; display: inline-block; width: auto;">
-                        <option value="">Selectați perioada</option>
-                        <option value="ianuarie - decembrie">15 aprilie - 22 aprilie </option>
-                        <option value="aprilie - octombrie">15 iunie - 22 septembrie </option>
-                        <option value="iunie - septembrie">01 decembrie - 20 decembrie</option>
-                    </select>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" th:field="*{activity}" value="Ture în natură companii" id="loc3">
-                    <label class="form-check-label" for="natureTour">Ture în natură</label><br>
-                    <select th:field="*{period}" class="form-control mt-2" id="loc2" name="Ture în natură companii" style="border-radius: 5px; display: inline-block; width: auto;">
-                        <option value="">Selectați perioada</option>
-                        <option value="ianuarie - decembrie">15 aprilie - 22 aprilie </option>
-                        <option value="aprilie - octombrie">15 iunie - 22 septembrie </option>
-                        <option value="iunie - septembrie">01 decembrie - 20 decembrie</option>
-                    </select>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" th:field="*{activity}" value="Ture în natură companii" id="loc1">
-                    <label class="form-check-label" for="natureTour">Escaladă</label><br>
-                    <select th:field="*{period}" class="form-control mt-2" id="turenat" name="Ture în natură companii" style="border-radius: 5px; display: inline-block; width: auto;">
-                        <option value="">Selectați perioada</option>
-                        <option value="ianuarie - decembrie">15 aprilie - 22 aprilie </option>
-                        <option value="aprilie - octombrie">15 iunie - 22 septembrie </option>
-                        <option value="iunie - septembrie">01 decembrie - 20 decembrie</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
         <br>
         <div class="form-group">
             <label for="mesaj">Mesaj:</label>

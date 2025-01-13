@@ -6,6 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PageController {
 
+    @GetMapping("/index")
+    public String index() {
+        return "index";
+    }
+
     @GetMapping("/login")
     public String login() {
         return "login";
@@ -13,12 +18,7 @@ public class PageController {
 
     @GetMapping("/loginadmin")
     public String loginadmin() {
-        return "loginadmin";
-    }
-
-    @GetMapping("/index")
-    public String index() {
-        return "index";
+        return "/loginadmin";
     }
 
     @GetMapping("/mainpage")
@@ -51,9 +51,9 @@ public class PageController {
         return "catering";
     }
 
-    @GetMapping("/cateringvegan")
-    public String cateringvegan() {
-        return "cateringvegan";
+    @GetMapping("/cateringadmin")
+    public String cateringadmin() {
+        return "cateringadmin";
     }
 
     @GetMapping("/aboutus")
@@ -61,23 +61,29 @@ public class PageController {
         return "aboutus";
     }
 
+
     @GetMapping("/contact")
     public String contact() {
         return "contact";
     }
+
 
     @GetMapping("/termsofservice")
     public String terms() {
         return "termsofservice";
     }
 
+
     @GetMapping("/politics")
     public String politics() {
         return "politics";
     }
 
+
     @GetMapping("/imprint")
     public String imprint() {
         return "imprint";
     }
+
+
 }

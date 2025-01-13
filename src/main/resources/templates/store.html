@@ -9,7 +9,41 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="/.css/css.css">
+    <style>
+        .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
+        .card img {
+            object-fit: cover;
+            height: 350px;
+        }
+
+        .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        table th {
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -81,8 +115,29 @@
                     <img th:src="@{/pictures/produse_1.jpeg}"
                          th:if="${product.name == 'Honey Bunny'}"
                          class="card-img-top" alt="Imagine produs">
-                    <img th:src="@{/pictures/cana_0.webp}"
+                    <img th:src="@{/pictures/produse_0.jpg}"
+                         th:if="${product.name == 'Greeny'}"
+                         class="card-img-top" alt="Imagine produs">
+                    <img th:src="@{/pictures/produse_10.webp}"
                          th:if="${product.name == 'Puffy cups'}"
+                         class="card-img-top" alt="Imagine produs">
+                    <img th:src="@{/pictures/produse_3.jpg}"
+                         th:if="${product.name == 'Lavander'}"
+                         class="card-img-top" alt="Imagine produs">
+                    <img th:src="@{/pictures/produse_6.jpg}"
+                         th:if="${product.name == 'Vanilla'}"
+                         class="card-img-top" alt="Imagine produs">
+                    <img th:src="@{/pictures/produse_4.jpg}"
+                         th:if="${product.name == 'Clock'}"
+                         class="card-img-top" alt="Imagine produs">
+                    <img th:src="@{/pictures/produse_7.webp}"
+                         th:if="${product.name == 'Tiny Human'}"
+                         class="card-img-top" alt="Imagine produs">
+                    <img th:src="@{/pictures/produse_9.jpeg}"
+                         th:if="${product.name == 'Flower'}"
+                         class="card-img-top" alt="Imagine produs">
+                    <img th:src="@{/pictures/produse_8.jpg}"
+                         th:if="${product.name == 'Happy'}"
                          class="card-img-top" alt="Imagine produs">
                     <div class="card-body">
                         <h5 class="card-title" th:text="${product.name}">Denumire produs</h5>
@@ -93,119 +148,42 @@
                             Descriere: <span th:text="${product.description}">Descriere</span>
                         </p>
                         <button class="btn btn-primary"
-                                th:attr="data-product-id=${product.productId}, data-product-name=${product.name}, data-product-price=${product.price}"
+                                th:attr="data-product-name=${product.name}, data-product-price=${product.price}"
                                 onclick="handleAddToOrder(this)"
-                                type="button">Add to Order</button>
-                        <script>
-                            // Initialize an empty array to store the order
-                            const order = [];
+                                type="button">Adaugă la comanda
+                        </button>
 
-                            /**
-                             * Function to handle adding a product to the order
-                             * @param {HTMLElement} buttonElement - The button element that triggered the event
-                             */
-                            function handleAddToOrder(buttonElement) {
-                                const productId = parseInt(buttonElement.getAttribute('data-product-id')); // Parse product ID as an integer
-                                const productName = buttonElement.getAttribute('data-product-name'); // Get product name
-                                const productPrice = parseFloat(buttonElement.getAttribute('data-product-price')); // Parse price as a float
-
-                                // Validate price
-                                if (isNaN(productPrice)) {
-                                    alert(`Invalid price for product: ${productName}`);
-                                    return;
-                                }
-
-                                addToOrder(productId, productName, productPrice);
-                            }
-
-                            /**
-                             * Add a product to the order array
-                             * @param {number} productId - The ID of the product
-                             * @param {string} productName - The name of the product
-                             * @param {number} price - The price of the product
-                             */
-                            function addToOrder(productId, productName, price) {
-                                // Check if the product already exists in the order
-                                const existingProduct = order.find(item => item.id === productId);
-                                if (existingProduct) {
-                                    // Increment the quantity if the product is already in the order
-                                    existingProduct.quantity += 1;
-                                } else {
-                                    // Add a new product to the order
-                                    order.push({ id: productId, name: productName, price: price, quantity: 1 });
-                                }
-                                updateOrderPreview(); // Update the order preview
-                            }
-
-                            /**
-                             * Update the order preview displayed on the page
-                             */
-                            function updateOrderPreview() {
-                                const orderPreview = document.getElementById('orderPreview');
-                                orderPreview.innerHTML = ''; // Clear the existing preview
-
-                                // Iterate through the order and display each item
-                                order.forEach(item => {
-                                    const total = item.price * item.quantity; // Calculate total price for the product
-
-                                    // Validate total
-                                    if (isNaN(total)) {
-                                        alert(`Invalid total for product: ${item.name}`);
-                                        return;
-                                    }
-
-                                    // Create a row for the product in the preview
-                                    const productRow = document.createElement('div');
-                                    productRow.textContent = `${item.name} (x${item.quantity}) - ${total.toFixed(2)} RON`;
-                                    orderPreview.appendChild(productRow);
-                                });
-                            }
-
-                            /**
-                             * Submit the order to the server
-                             */
-                            async function submitOrder() {
-                                // Check if the order is empty
-                                if (order.length === 0) {
-                                    alert('Your order is empty!');
-                                    return;
-                                }
-
-                                try {
-                                    // Send the order to the server
-                                    const response = await fetch('/products/submitOrder', {
-                                        method: 'POST',
-                                        headers: { 'Content-Type': 'application/json' },
-                                        body: JSON.stringify(order) // Send the order as JSON
-                                    });
-
-                                    if (response.ok) {
-                                        alert('Order submitted successfully!');
-                                        order.length = 0; // Clear the order
-                                        updateOrderPreview(); // Update the preview
-                                    } else {
-                                        alert('Failed to submit the order!');
-                                    }
-                                } catch (error) {
-                                    alert('An error occurred while submitting the order!');
-                                    console.error(error); // Log the error for debugging
-                                }
-                            }
-                        </script>
                     </div>
                 </div>
             </div>
         </div>
         <br><br>
-        <h2>Your Order</h2>
-        <div id="orderPreview"></div>
+        <h2>Comanda ta</h2>
+        <table id="orderTable">
+            <thead>
+            <tr>
+                <th>Denumire produs</th>
+                <th>Preț per bucată (RON)</th>
+                <th>Cantitate</th>
+                <th>Total pe linie (RON)</th>
+            </tr>
+            </thead>
+            <tbody id="orderPreview">
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="3"><b>Total pe comandă</b></td>
+                <td id="totalOrdered">0.00 RON</td>
+            </tr>
+            </tfoot>
+        </table>
         <br>
-        <button onclick="submitOrder()" class="btn btn-success">Place Order</button>
-
+        <button onclick="submitOrder()" class="btn btn-success">Trimite comanda</button>
         <br><br>
     </div>
 </div>
 <br><br><br>
+
 
 
 <!-- Nota subsol -->
@@ -270,5 +248,102 @@
     </div>
 </footer>
 
+<script>
+    const order = [];
+
+    function handleAddToOrder(buttonElement) {
+        const productName = buttonElement.getAttribute('data-product-name');
+        const productPrice = parseInt(buttonElement.getAttribute('data-product-price'));
+
+        if (isNaN(productPrice)) {
+            alert(`Invalid price for product: ${productName}`);
+            return;
+        }
+
+        addToOrder(productName, productPrice);
+    }
+
+    function addToOrder(productName, price) {
+        const existingProduct = order.find(item => item.name === productName);
+        if (existingProduct) {
+            existingProduct.quantity += 1;
+        } else {
+            order.push({ name: productName, price: price, quantity: 1 });
+        }
+        updateOrderPreview();
+    }
+
+    function updateOrderPreview() {
+        const orderPreview = document.getElementById('orderPreview');
+        const totalOrderedElement = document.getElementById('totalOrdered');
+        orderPreview.innerHTML = '';
+
+        let totalOrdered = 0;
+
+        order.forEach(item => {
+            const total = item.price * item.quantity;
+
+            if (isNaN(total)) {
+                alert(`Total nevalid: ${item.name}`);
+                return;
+            }
+            const row = document.createElement('tr');
+            const nameCell = document.createElement('td');
+            nameCell.textContent = item.name;
+            row.appendChild(nameCell);
+            const priceCell = document.createElement('td');
+            priceCell.textContent = item.price.toFixed(2);
+            row.appendChild(priceCell);
+            const quantityCell = document.createElement('td');
+            quantityCell.textContent = item.quantity;
+            row.appendChild(quantityCell);
+            const totalCell = document.createElement('td');
+            totalCell.textContent = total.toFixed(2);
+            row.appendChild(totalCell);
+            orderPreview.appendChild(row);
+            totalOrdered += total;
+        });
+        totalOrderedElement.textContent = `${totalOrdered.toFixed(2)} RON`;
+    }
+
+    async function submitOrder() {
+        if (order.length === 0) {
+            alert('Comanda ta nu are produse');
+            return;
+        }
+        for (const item of order) {
+            const productData = {
+                productName: item.name,
+                orderedQuantity: item.quantity,
+                pricePerItem: item.price,
+                totalPrice: (item.price * item.quantity).toFixed(2),
+                orderDate: new Date().toISOString().split('T')[0],
+                status: 'PENDING'
+            };
+
+            try {
+                const response = await fetch('/orders/addorder', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(productData).toString()
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Eroare la trimiterea produslui: ${item.name}`);
+                }
+            } catch (error) {
+                alert(`O eroare a fost întâmpinată: ${item.name}`);
+                console.error(error);
+            }
+        }
+        alert('Comanda a fost trimisă cu succes!');
+        order.length = 0;
+        updateOrderPreview();
+    }
+
+
+
+
+</script>
 </body>
 </html>

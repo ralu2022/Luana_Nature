@@ -41,13 +41,4 @@ public class ProductController {
         return "redirect:/products/products";
     }
 
-    @PostMapping("/submitOrder")
-    @ResponseBody
-    public ResponseEntity<String> submitOrder(@RequestBody List<Product> products) {
-
-        System.out.println("Order received: " + products);
-        return ResponseEntity.ok("Order submitted successfully!");
-    }
-
-
 }
