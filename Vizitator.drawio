@@ -1,0 +1,81 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0" version="26.0.5">
+  <diagram name="Page-1" id="n-mjKCvB6xhaWvd59IKn">
+    <mxGraphModel dx="1489" dy="761" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <object label="Vizitator" id="AoDqTXzkwvZwWfI7U25t-1">
+          <mxCell style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1" vertex="1">
+            <mxGeometry x="373" y="128" width="40" height="80" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="AoDqTXzkwvZwWfI7U25t-5" value="Înregistrare client" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="62" y="257" width="140" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="AoDqTXzkwvZwWfI7U25t-14" value="Vizualizare produse magazin" style="ellipse;whiteSpace=wrap;html=1;fontStyle=0;fontFamily=Comic Sans MS;" parent="1" vertex="1">
+          <mxGeometry x="573" y="445" width="140" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="AoDqTXzkwvZwWfI7U25t-19" value="Vizualizare pagină Contact" style="ellipse;whiteSpace=wrap;html=1;fontStyle=0;fontFamily=Comic Sans MS;" parent="1" vertex="1">
+          <mxGeometry x="771" y="445" width="140" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="AoDqTXzkwvZwWfI7U25t-20" value="Trimitere mesaje" style="ellipse;whiteSpace=wrap;html=1;fontStyle=0;fontFamily=Comic Sans MS;" parent="1" vertex="1">
+          <mxGeometry x="771" y="640" width="140" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="AoDqTXzkwvZwWfI7U25t-7" value="Vizualizare pagină principală" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="573" y="257" width="140" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="AoDqTXzkwvZwWfI7U25t-42" value="Figura 3.1 Diagrama cazurilor de utilizare pentru vizitator" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="176" y="804" width="567" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pEvbIDOdr8hpv354xEik-9" value="Vizualizare pagini Companii, Individual, Lumea copiilor, Despre noi" style="ellipse;whiteSpace=wrap;html=1;fontStyle=0;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="386" y="445" width="140" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="pEvbIDOdr8hpv354xEik-11" value="Vizualizare pagini Facebook, Instagram, Termeni și Condiții, Politici, Imprint" style="ellipse;whiteSpace=wrap;html=1;fontStyle=0;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="207" y="445" width="140" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="pEvbIDOdr8hpv354xEik-13" value="" style="endArrow=none;html=1;rounded=0;exitX=0.55;exitY=0.011;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="AoDqTXzkwvZwWfI7U25t-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="139" y="252" as="sourcePoint" />
+            <mxPoint x="366" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pEvbIDOdr8hpv354xEik-15" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="AoDqTXzkwvZwWfI7U25t-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="422" y="175" as="sourcePoint" />
+            <mxPoint x="542" y="176" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pEvbIDOdr8hpv354xEik-16" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="pEvbIDOdr8hpv354xEik-11" target="AoDqTXzkwvZwWfI7U25t-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="284" y="443" as="sourcePoint" />
+            <mxPoint x="334" y="393" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pEvbIDOdr8hpv354xEik-17" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="pEvbIDOdr8hpv354xEik-9" target="AoDqTXzkwvZwWfI7U25t-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="463" y="459" as="sourcePoint" />
+            <mxPoint x="513" y="409" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pEvbIDOdr8hpv354xEik-18" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="AoDqTXzkwvZwWfI7U25t-19">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="463" y="459" as="sourcePoint" />
+            <mxPoint x="644" y="353" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pEvbIDOdr8hpv354xEik-19" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="AoDqTXzkwvZwWfI7U25t-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="463" y="459" as="sourcePoint" />
+            <mxPoint x="641" y="351" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pEvbIDOdr8hpv354xEik-20" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="AoDqTXzkwvZwWfI7U25t-20">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="841" y="542" as="sourcePoint" />
+            <mxPoint x="905" y="592" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

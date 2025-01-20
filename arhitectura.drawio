@@ -1,0 +1,132 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0" version="26.0.6">
+  <diagram name="Page-1" id="5zAy0D9pxmsTvdevPiFe">
+    <mxGraphModel dx="1678" dy="1281" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-1" value="Complex turistic Luana Nature" style="swimlane;startSize=20;horizontal=1;containerType=tree;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=default;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="60" y="-4" width="1124" height="720" as="geometry" />
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-5" value="Companii" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="JOgxRfthWP2w1d_2OhTb-1">
+          <mxGeometry x="10" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-9" value="MainPage" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="JOgxRfthWP2w1d_2OhTb-1">
+          <mxGeometry x="497" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-11" value="Lumea copiilor" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="JOgxRfthWP2w1d_2OhTb-1">
+          <mxGeometry x="150" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-14" value="Catering&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px; text-align: start; text-wrap-mode: nowrap;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22Companii%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Balign%3Dcenter%3BverticalAlign%3Dmiddle%3BtreeFolding%3D1%3BtreeMoving%3D1%3BnewEdgeStyle%3D%7B%26quot%3BedgeStyle%26quot%3B%3A%26quot%3BelbowEdgeStyle%26quot%3B%2C%26quot%3BstartArrow%26quot%3B%3A%26quot%3Bnone%26quot%3B%2C%26quot%3BendArrow%26quot%3B%3A%26quot%3Bnone%26quot%3B%7D%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22190%22%20y%3D%22245%22%20width%3D%22120%22%20height%3D%2260%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="JOgxRfthWP2w1d_2OhTb-1">
+          <mxGeometry x="290" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-16" value="Review" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="JOgxRfthWP2w1d_2OhTb-1">
+          <mxGeometry x="570" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-15" value="Magazin" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="JOgxRfthWP2w1d_2OhTb-1">
+          <mxGeometry x="430" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-17" value="Rezervări" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="JOgxRfthWP2w1d_2OhTb-1">
+          <mxGeometry x="710" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-18" value="Despre noi" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="JOgxRfthWP2w1d_2OhTb-1">
+          <mxGeometry x="850" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-19" value="Contact" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="JOgxRfthWP2w1d_2OhTb-1">
+          <mxGeometry x="990" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <UserObject label="Index" treeRoot="1" id="JOgxRfthWP2w1d_2OhTb-4">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="JOgxRfthWP2w1d_2OhTb-1">
+            <mxGeometry x="497" y="56" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-27" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="JOgxRfthWP2w1d_2OhTb-1" source="JOgxRfthWP2w1d_2OhTb-4" target="JOgxRfthWP2w1d_2OhTb-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="552" y="340" as="sourcePoint" />
+            <mxPoint x="557" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-33" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="JOgxRfthWP2w1d_2OhTb-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="557" y="220" as="sourcePoint" />
+            <mxPoint x="74" y="292" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-34" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="JOgxRfthWP2w1d_2OhTb-1" source="JOgxRfthWP2w1d_2OhTb-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="552" y="340" as="sourcePoint" />
+            <mxPoint x="216" y="294" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-41" value="Produse" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="JOgxRfthWP2w1d_2OhTb-1">
+          <mxGeometry x="352" y="426" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-42" value="Comandă nouă" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="JOgxRfthWP2w1d_2OhTb-1">
+          <mxGeometry x="497" y="426" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-43" value="Listă rezervări" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="JOgxRfthWP2w1d_2OhTb-1">
+          <mxGeometry x="653" y="426" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-44" value="Rezervare nouă" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="JOgxRfthWP2w1d_2OhTb-1">
+          <mxGeometry x="795" y="426" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-49" value="Arhitectura aplicației Complex turistic Luana Nature" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;fontSize=20;" vertex="1" parent="JOgxRfthWP2w1d_2OhTb-1">
+          <mxGeometry x="226" y="527" width="662" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-35" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="JOgxRfthWP2w1d_2OhTb-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="604" y="336" as="sourcePoint" />
+            <mxPoint x="1103" y="286" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-36" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="611" y="215" as="sourcePoint" />
+            <mxPoint x="956" y="286" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-38" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="609" y="216" as="sourcePoint" />
+            <mxPoint x="815" y="289" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-39" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="609" y="215" as="sourcePoint" />
+            <mxPoint x="536" y="291" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-40" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="608" y="214" as="sourcePoint" />
+            <mxPoint x="670" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-45" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="JOgxRfthWP2w1d_2OhTb-15">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="604" y="336" as="sourcePoint" />
+            <mxPoint x="472" y="418" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-46" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="545" y="355" as="sourcePoint" />
+            <mxPoint x="622" y="419" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-47" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="JOgxRfthWP2w1d_2OhTb-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="604" y="336" as="sourcePoint" />
+            <mxPoint x="774" y="419" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JOgxRfthWP2w1d_2OhTb-48" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="829" y="356" as="sourcePoint" />
+            <mxPoint x="913" y="418" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
